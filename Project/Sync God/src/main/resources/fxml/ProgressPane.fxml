@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="syncgod.track.ProgressPane">
+    <Label fx:id="progressPaneLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" styleClass="progressPaneLabel" text="00:00:00" StackPane.alignment="TOP_LEFT" />
+    <AnchorPane fx:id="progressTickPane" maxHeight="30.0" minHeight="30.0" styleClass="progress" StackPane.alignment="TOP_LEFT">
+        <StackPane.margin>
+            <Insets left="100.0" />
+        </StackPane.margin>
+    </AnchorPane>
+    <Pane fx:id="progressClickPane" maxHeight="30.0" minHeight="30.0" onMouseClicked="#onMouseClick" StackPane.alignment="TOP_LEFT">
+        <StackPane.margin>
+            <Insets left="100.0" />
+        </StackPane.margin>
+    </Pane>
+    <Pane fx:id="progressMarkerHolder">
+        <VBox fx:id="progressMarkerPane" layoutY="10.0">
+         <children>
+            <Pane maxWidth="2.0" minWidth="2.0" prefHeight="500.0" styleClass="progressMarker" />
+         </children>
+
+        </VBox>
+      <StackPane.margin>
+         <Insets left="100.0" />
+      </StackPane.margin>
+    </Pane>
+</StackPane>

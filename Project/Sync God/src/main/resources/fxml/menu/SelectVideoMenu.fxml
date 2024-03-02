@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="selectVideoMenu" maxHeight="90.0" maxWidth="580.0"
+      minHeight="90.0" minWidth="580.0" styleClass="mainWindow"
+      stylesheets="@../../styles/Styles.css" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="syncgod.menu.SelectVideoMenu">
+    <VBox fx:id="offsetHolder" prefHeight="50.0">
+      <VBox.margin>
+         <Insets top="5.0" />
+      </VBox.margin></VBox>
+    <ButtonBar fx:id="buttonBar" maxHeight="40.0" minHeight="40.0">
+        <buttons>
+            <Button alignment="CENTER" onAction="#finished" text="Load"
+                    ButtonBar.buttonData="LEFT" />
+            <Button fx:id="cancel" alignment="CENTER" onAction="#cancel" text="Exit"
+                    ButtonBar.buttonData="RIGHT" />
+        </buttons>
+        <VBox.margin>
+            <Insets bottom="5.0" left="25.0" right="25.0" top="10.0" />
+        </VBox.margin>
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </padding>
+    </ButtonBar>
+</VBox>

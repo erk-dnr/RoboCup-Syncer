@@ -1,0 +1,25 @@
+\chapter{Produktdaten und nicht-funktionale Anforderungen}
+
+	\section{Nicht-funktionale Anforderungen}
+		\subsection*{Pflicht}
+			\begin{description}
+				\item [/NF10/] Wartbarkeit: Javadoc muss vollständig sein. Dokumentation und Kommentare vollständig auf englisch. Code conventions einheitlich in der gesamten Software.
+				\item [/NF11/] Die Software auf Linux anwendbar sein.
+				\item [/NF12/] Bedienbarkeit: Einfache Bedienung des Programms, dazu gehört ein vollständiges Manual mit Funktionsbeschreibungen und eine nutzerfreundliche bzw. selbstbeschreibende GUI.
+				\item [/NF13/] Modularität: Modulare Programmierung als Programmierparadigma.
+				\item [/NF13/] Java als Programmiersprache.
+			\end{description}
+		\subsection*{Optional}
+			\begin{description}
+				\item [/NF20/] Interoperabilität: Die Software soll plattformunabhängig sein, d.h. auf Windows, Linux und Mac anwendbar sein.
+				\item [/NF21/] Benutzung von Logging Framework
+			\end{description}
+		
+	\section{Produktdaten}
+		\begin{description}
+			\item [/PD10/] Inputdaten: Alle Daten, die vom Benutzer ins Programm geladen werden können. Dazu gehören bis zu 4 \textbf{Videodaten}, sowie ein \textbf{GameController (GC) Log}.
+			\item [/PD11/] Videodaten: Videodateien im Format MP4 mit 30 FPS und dem zu den Video gehörenden Offset.
+			\item [/PD12/] GC LOG: Log-Datei als Textdokument, die Daten zum Spielablauf enthält.
+			\item [/PD13/] Konfigurationsdaten: Alle die vom Benutzer bestimmbare Daten, die den Videobearbeitungsprozess beeinflussen. Alle automatisierten Prozesse sollen vom Benutzer konfigurierbar sein, dazu gehört unter anderem zu einem bestimmten Videoevent davor springen um die Kamera auszuwählen. Weiterhin soll das Outputformat einstellbar sein.
+			\item [/PD14/] Outputdaten: Die aus dem Videosynchronisationsprozess hervorgehenden Daten. Darunter fallen Projektdateien, sowie MLT Dateien.
+		\end{description}

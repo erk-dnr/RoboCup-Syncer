@@ -1,0 +1,17 @@
+<Analyse von="2018-11-05" bis="2018-11-12" gruppe="tj18b" createdBy="RW" createdAt="2018-11-11"> 
+  <done who="RW,SP,DH,ED,JW,TD,AE" A="1" S="1" Zeit="1"> Aufgabenverteilung Recherchebericht, Besprechung Issues, Planung weiteres Vorgehen</done>
+  <done who="RW" A="3" S="3" Zeit="4">Einrichten und Testen des OpenCV Packages für Java</done>
+  <done who="RW" A="2" S="1" Zeit="2">Verfassen des Protokolls, Recherchebericht über OpenCV und Fourier Transformation</done>
+  <done who="TD" A="2" S="2" Zeit="5">Einrichten und Testen von VlcJ</done>
+  <done who="SP" A="1" S="1" Zeit="2">Aufschlüsseln der Aufgaben in Issues</done>
+  <done who="AE" A="1" S="1" Zeit="3">Verfassen der Aspekte des Rechercheberichts</done>
+  <done who="SP" A="2" S="2" Zeit="3">Einrichten, Austesten von VlcJ</done>
+  <done who="SP, TD" A="2" S="2" Zeit="3">Recherchebericht VlcJ</done>
+  <done who="SP, TD" A="1" S="1" Zeit="1">Diskussion über VlcJ</done>
+  <done who="DH" A="3" S="2" Zeit="4">Recherche, Einrichtung und Testen von Xuggler</done>
+  <done who="DH" A="2" S="1" Zeit="2">Aufsetzen und Aufbereitung des Rechercheberichts"</done>
+  <done who="DH" A="2" S="1" Zeit="4">Texte zusammentragen, formatieren, Glossar füllen, Recherchebericht über Xuggler</done>
+  <done who="JW" A="3" S="3" Zeit="5">Recherchebericht über FFmpeg angefertigt</done>
+  <done who="ED" A="3" S="2" Zeit="5">Recherche zu JavaCV und FFmpeg</done>
+  <done who="ED" A="2" S="3" Zeit="2">Testen der JavaCV API</done>
+</Analyse>

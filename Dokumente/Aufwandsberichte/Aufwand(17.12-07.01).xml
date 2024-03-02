@@ -1,0 +1,12 @@
+<Analyse von="2018-12-16" bis="2019-01-07" gruppe="tj18b" createdBy="RW" createdAt="2019-01-07"> 
+  <done who="RW,SP,DH,ED,JW,TD,AE" A="1" S="1" Zeit="1"> Aufgabenverteilung Entwurfsbericht, Dokumentation und Bedienungsanleitung</done>
+  <done who="RW, DH" A="3" S="3" Zeit="10">Entwurf GUI, Softwarearchitektur, Implementierung Funktionalität LogPane</done>
+  <done who="DH" A="3" S="3" Zeit="6">Implementierung Funktionalität ControllerPane/Video, Resizable Player, Einbindung VLCJ</done>
+  <done who="DH" A="1" S="1" Zeit="4">Styling GUI, Verbesserung vom dynamic resizing</done>
+  <done who="RW" A="1" S="1" Zeit="1">Verfassen des Kapitels Rahmenbedingungen und Produktübersicht</done>
+  <done who="SP" A="1" S="1" Zeit="1">Erstellen der Testklassen</done>
+  <done who="SP" A="1" S="1" Zeit="2">Anlegen der LateX-Files und Erstellen des Datenmodells</done>
+  <done who="TD" A="3" S="3" Zeit="2">Erstellung einige Tests</done>
+  <done who="AE" A="1" S="1" Zeit="1">Ergänzungen, Formatierung</done>
+  <done who="ED" A="1" S="2" Zeit="2.5">Kapitel Grundsätzliche Entwurfsprinzipien + Entwurfsprinzipien einzelner Pakete + Glossar</done>
+</Analyse>

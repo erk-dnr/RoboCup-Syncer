@@ -1,0 +1,69 @@
+\chapter{Dokumentationskonzept}
+Eine verständliche und konsequente Dokumentation ist von großer Bedeutung. Auch wenn sich die Dimension unseres Projekts in Grenzen hält, verhilft uns die Dokumentation dazu, den Überblick zu bewahren und erleichtert somit die Zusammenarbeit im Team. Auch zeitlich betrachtet darüber hinaus ist dies relevant, da diese Software auch dafür vorgesehen ist, nach dem Release von anderen Entwicklern gewartet und ausgebaut zu werden. \\
+\\Die gesamte Dokumentation erfolgt auf Englisch.
+
+\section{Code-Dokumentation}
+
+\subsection{Interne Dokumentation}
+Es wird angestrebt, dass der Quellcode so gut verständlich ist, so dass Kommentare überflüssig sind und der Code die beste Dokumentation für sich selbst ist. Interne Dokumentation sollte also sparsam eingesetzt werden und nur dann, wenn es nicht vermeidbar ist, dass der Quellcode ungeklärte Fragen hinterlässt.
+
+\subsection{Quelltextnahe strukturierte Dokumentation}
+Die quelltextnahe interne Dokumentation dient im Wesentlichen zur Beschreibung der implementierten Klassen und Funktionen. Als Minimum muss jede als public deklarierte Klasse und jeder als public oder protected deklarierte Teil davon (Attribute oder Methoden) dokumentiert sein. Ausnahmen bilden Methoden, deren Funktion als selbsterklärend angesehen werden kann, wie bei set- und get-Methoden. Auch Methoden, die von einer Superklasse überschrieben werden, müssen nicht zwingend dokumentiert werden.
+\\Da diese Software ausschließlich in Java programmiert wird, nutzen wir als Dokumentationswerkzeug Javadoc.
+
+\subsection{Entwurfsbeschreibung}
+Die Entwurfsbeschreibung ist ein eigenständiges Dokument, welches alle relevanten Informationen zu den Struktur- und Entwurfsprinzipien dieser Software darbietet und die getroffenen Entscheidungen begründet. Mithilfe dieser Dokumentation wird zukünftigen Programmierern an diesem Projekt die Einarbeitung vereinfacht und das notwendige Fachwissen übermittelt. Die Entwurfsbeschreibung wird erst im Verlauf der Implementierungsphase entstehen, da sämtliche Modellierungs- und Design-Entscheidungen aktuell noch variabel sind und daher erst mit der Zeit eindeutig dokumentiert werden können.
+\\Dieses Dokument wird auf Deutsch erstellt.
+
+\section{Code}
+In diesem Abschnitt werden ein paar Vereinbarungen vorgestellt, die sich positiv auf den Dokumentationsaufwand auswirken sollen.\\
+\\Guter Code muss folgende Eigenschaften besitzen:
+\begin{itemize}
+	\item geringe Komplexität, andernfalls Anzeichen dafür, dass man den Code refaktorisieren sollte
+	\item nicht mehrere Statements in einer Zeile
+	\item eine Methode erledigt nur eine funktionale Aufgabe
+	\item keine ``hartcodierten'' Zahlen (Magic Numbers) und Strings,
+d.h. falls in einer Funktion unbekannte Zahlen oder unbekannte Strings auftauchen, werden diese an eine Variable gebunden
+\end{itemize}
+
+\section{Coding Standard}
+Ein einheitlicher Coding Standard ist sinnvoll um bestmögliche Lesbarkeit und Verständnis des Quelltextes zu garantieren.
+\\Für dieses Projekt wird der offizielle \href{https://google.github.io/styleguide/javaguide.html}{Google Java Style Guide} befolgt, weil er modern, konsequent und überaus verbreitet ist. Eine Ausnahme gehen wir bei dem Thema Einrückungen: Der Google Java Style Guide empfiehlt hier 2 Zeichen (4 bei Folgezeilen), wir legen uns allerdings auf 4 Zeichen fest.
+
+\subsection{Code Layout}
+Im Folgenden werden die wichtigsten Konventionen unseres Coding Standards erläutert.
+
+\begin{description}
+\item[Klammersetzung]\hfill 
+\\if, else, for, do, while-Statements werden immer von Klammern umschlossen, auch wenn nur 	ein einziger Ausdruck enthalten ist. 
+\\Klammern werden stets am Ende der gleichen Zeile geöffnet.
+\end{description}
+
+\begin{description}
+\item[Einrückungen]\hfill 
+\\Für Einrückungen werden stets 4 Leerzeichen oder Tabs mit der Länge von 4 Zeichen verwendet.
+\end{description}
+
+\begin{description}
+\item[Leerzeichen]\hfill 
+\\Binäre Operationen sollten mit einem Leerzeichen umgeben sein. Dies gilt ebenfalls für den ``-->''- und Ternary-Operator.
+\\Direkt nach öffnenden Klammern, direkt vor schließenden Klammern und vor Kommas, Semikolons und Doppelpunkten sollten sie vermieden werden.
+\end{description}
+
+\begin{description}
+\item[Kommentare/Javadoc]\hfill 
+\\Kommentare beziehen sich stets auf die darunter liegende(n) Zeile(n) oder sie stehen am Ende der zu erläuternden Zeile.
+\\Sie sollten immer aus ganzen natürlichsprachlichen Sätzen bestehen und trotzdem so prägnant wie möglich sein.
+\\Natürlichsprachlich bedeutet, dass es zu vermeiden ist Code-Fragmente mit einzubeziehen.
+\end{description}
+
+\begin{description}
+\item[Namenskonventionen]\hfill 
+\\Klassen und Interfaces werden im UpperCamelCase deklariert (z.B. ControllerPane).
+\\Methoden, Attribute und Parameter werden im lowerCamelCase deklariert (z.B. setMaxWidth).
+\\Konstanten werden nur in Großbuchstaben deklariert und jedes Wort wird mit Unterstrich vom nächsten separiert (z.B. DURATION\_IN\_MS).
+\\Wenn es sinnvoll erscheint können Abkürzungen und Akronyme verwendet werden. Beispielsweise können Variablen, die von irgendetwas die Anzahl zählen, mit \# beginnen (z.B. \#frame statt numberOfFrame).
+\end{description}
+
+\subsection{Tools}
+Um sicherzustellen, dass gepushte Commits im Einklang mit unseren gewählten Richtlinien stehen, werden wir das Tool \href{http://checkstyle.sourceforge.net}{Checkstyle} in die IDE integrieren. Dadurch werden Commits nur akzeptiert, wenn der Code den Style Guide nicht verletzt, andernfalls wird der Commit mit einer Fehlerbeschreibung zurückgewiesen und der Entwickler muss den Code entsprechend überarbeiten.

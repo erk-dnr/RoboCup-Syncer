@@ -1,0 +1,22 @@
+\chapter{Funktionale Anforderungen}
+
+    \section{Pflicht}
+    Die grundlegenden funktionalen Anforderungen werden im Folgenden aufgelistet
+    \begin{description}
+        \item [/F10/] Abspielen von bis zu vier Videos gleichzeitg und Synchronisierung der Videos anhand ihres Offsets. Dafür soll jedes Video ein eigenes Anzeigelement erhalten, sowie eine zentrale Steuereinheit implementiert werden. Diese soll Sprünge zu beliebigen Punkten anhand eines Sliders, Vorwärts- und Rückwärts-Sprünge um beliebige Frames oder Sekunden sowie eine Pausefunktion beinhalten.
+        \item [/F11/] Die zum Videoset gehörenden Logfiles sollen geparst und mit der Timeline im Video synchronisiert werden. Durch Klicken auf die spezifische Logeinträge, soll im Video an die entsprechende Stelle gesprungen werden. Ebenso soll ein Sprung im Video auch den entsprechenden Logeintrag markieren.
+        \item [/F12/] Zu jedem Set geladener Videos, soll bestimmt werden können, welche Tonspur global verwendet werden soll.
+        \item [/F13/] In den Videos sollen für beliebig viele Kamerawechsel Markierungspunkte gesetzt werden können. Diese sollen in einem MLT-file gespeichert werden können. Darüber hinaus sollen auch png-files eingelesen und mit entsprechenden Markierungspunkten versehen werden können.
+    \end{description}
+
+    \section{Optional}
+    Eine Vielzahl von Zusatzfeatures sind optional implemententbar. Dazu zählen Folgende:
+    \begin{description}
+        \item [/F20/] Automatische Synchronisation der Audiospur
+        \item [/F21/] Automatischer Kamerawechsel
+        \item [/F22/] Umgang mit gesplitteten Logfiles oder fehlenden Audiospuren
+        \item [/F23/] das Automatisieren der Offset-Brechnung
+        \item [/F24/] Umgang mit unterschiedlichen Videoformaten und FPS-Konvertierung
+        \item [/F25/] Erzeugung eines Overlays aus einer Bilddatei.
+    \end{description}
+    

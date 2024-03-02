@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:id="offsetSelect" fillHeight="false" maxHeight="40.0" maxWidth="580.0"
+      minHeight="40.0" minWidth="580.0" stylesheets="@../../styles/Styles.css"
+      xmlns="http://javafx.com/javafx" fx:controller="syncgod.menu.OffsetSelect">
+    <CheckBox fx:id="checkSelected" maxHeight="20.0" maxWidth="20.0" minHeight="20.0"
+              minWidth="20.0"
+              mnemonicParsing="false" selected="true">
+        <HBox.margin>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+        </HBox.margin>
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </CheckBox>
+    <Label fx:id="labelPath" maxHeight="30.0" maxWidth="380.0" minHeight="30.0" minWidth="380.0"
+           prefHeight="30.0" textOverrun="LEADING_ELLIPSIS">
+        <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </HBox.margin>
+    </Label>
+    <TextField fx:id="textFieldOffset" maxHeight="30.0" maxWidth="90.0" minHeight="30.0"
+               minWidth="90.0" text="0">
+        <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </HBox.margin>
+    </TextField>
+    <Label maxHeight="30.0" maxWidth="55.0" minHeight="30.0" minWidth="55.0" prefHeight="30.0"
+           text="frames">
+        <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </HBox.margin>
+    </Label>
+</HBox>

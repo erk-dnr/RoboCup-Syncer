@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="480.0" prefWidth="640.0" styleClass="mainWindow" stylesheets="@../../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="syncgod.menu.SettingsMenu">
+
+    <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+        </VBox.margin>
+        <Tab text="General">
+            <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0">
+                <GridPane vgap="5.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="200.0" prefWidth="200.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                    <Label text="FPS">
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </Label>
+                    <Label text="Skip Frame Amount" GridPane.rowIndex="1">
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </Label>
+                    <Label text="Video Width" GridPane.rowIndex="2">
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </Label>
+                    <Label text="Video Height" GridPane.rowIndex="3">
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </Label>
+                    <TextField fx:id="fieldFps" GridPane.columnIndex="2" />
+                    <TextField fx:id="fieldSkipFrameAmount" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                    <TextField fx:id="fieldVideoWidth" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                    <TextField fx:id="fieldVideoHeight" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+               <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" text="?" GridPane.columnIndex="1">
+                  <tooltip>
+                            <Tooltip prefWidth="300" text="Frames per Second which applies to all components. The loaded videos should have the configured framerate." wrapText="true" />
+                  </tooltip>
+               </Label>
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" text="?" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <tooltip>
+                            <Tooltip prefWidth="300" text="Amount of frame to skip when using fast skip button." wrapText="true" />
+                  </tooltip>
+               </Label>
+                </GridPane>
+            </ScrollPane>
+        </Tab>
+        <Tab text="Controls">
+            <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0">
+                <GridPane maxHeight="-Infinity" vgap="5.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" />
+                        <ColumnConstraints hgrow="NEVER" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="200.0" prefWidth="200.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                    <TextField fx:id="fieldMouseResizeSens" GridPane.columnIndex="2" />
+                    <Label text="Mouse Resize Sensitivity">
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </Label>
+               <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" text="?" GridPane.columnIndex="1">
+                  <tooltip>
+                            <Tooltip prefWidth="300" text="Mouse Sensitivity for resizing the markers in the track box" wrapText="true" />
+                  </tooltip>
+               </Label>
+                </GridPane>
+            </ScrollPane>
+        </Tab>
+        <Tab text="Advanced">
+            <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0">
+                <GridPane maxHeight="-Infinity" vgap="5.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" />
+                        <ColumnConstraints hgrow="NEVER" />
+                        <ColumnConstraints hgrow="NEVER" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                    <Label text="Worker Update Rate">
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </Label>
+                    <Label text="Clock Update Rate" GridPane.rowIndex="1">
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </Label>
+                    <TextField fx:id="fieldWorkerRate" alignment="TOP_RIGHT" GridPane.columnIndex="3" />
+                    <TextField fx:id="fieldClockRate" alignment="CENTER_RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+               <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" text="?" GridPane.columnIndex="1">
+                  <tooltip>
+                            <Tooltip prefWidth="300" text="The rate at which the video checks if the next frame should be grabbed, increasing this value may increase performance but can create inaccuracy. The unit is milliseconds. The recommended rate is 10ms - 20ms." wrapText="true" />
+                  </tooltip>
+               </Label>
+               <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" text="?" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <tooltip>
+                            <Tooltip prefWidth="300" text="Videos are synchronized through a clock, the update rate is the schedule rate for checking if the videos should display the next frame. Increasing this value may increase performance and the inaccuracy of the timer. The unit is milliseconds. The recommended rate is 10ms - 30ms." wrapText="true" />
+                  </tooltip>
+               </Label>
+                </GridPane>
+            </ScrollPane>
+        </Tab>
+    </TabPane>
+
+    <ButtonBar buttonMinWidth="0.0" minWidth="500.0">
+        <buttons>
+            <Button fx:id="resetButton" alignment="CENTER" onAction="#onClickReset" text="Reset" ButtonBar.buttonData="LEFT" />
+            <Button alignment="CENTER" onAction="#onClickOk" text="OK" />
+            <Button fx:id="cancelButton" alignment="CENTER" onAction="#onClickCancel" text="Cancel" />
+            <Button fx:id="applyButton" alignment="CENTER" disable="true" onAction="#onClickApply" text="Apply" />
+        </buttons>
+        <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </VBox.margin>
+    </ButtonBar>
+</VBox>

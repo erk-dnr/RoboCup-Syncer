@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Analyse von="2019-02-05" bis="2019-03-04" gruppe="tj18b" createdBy="AE" createdAt="2018-03-04"> 
+  <done who="DH,SP,AE" A="2" S="2" Zeit="8">Bugfixes, Redesign</done>
+  <done who="SP" A="2" S="2" Zeit="14">MltParser (Reader, Writer, Model, Tests)</done>
+  <done who="SP" A="2" S="2" Zeit="8">read/write/parse project file</done>
+  <done who="SP" A="2" S="2" Zeit="8">Implemented using parser</done>
+  <done who="SP" A="2" S="2" Zeit="4">project file with log</done>
+  <done who="AE" A="2" S="2" Zeit="4">Ergänzungen Manual</done>
+  <done who="AE" A="1" S="1" Zeit="2">Preparing Release</done>
+  <done who="JW" A="2" S="2" Zeit="4">Vervollständigung Hilfe</done>
+  <done who="ED" A="2" S="2" Zeit="5">Video Zeitstempel, Redesign</done>
+  <done who="TD" A="3" S="2" Zeit="4">Bugfixes, Open Manual Implementation</done>
+  <done who="TD" A="2" S="1" Zeit="3">Tests for Menu, Settingsmenu</done>
+  <done who="TD" A="1" S="1" Zeit="2">Additions, Changes to Manual</done>
+  <done who="DH" A="1" S="1" Zeit="2">Load video menu, enter offset</done>
+  <done who="DH" A="1" S="1" Zeit="1">Implement drag and drop video/log</done>
+  <done who="DH" A="1" S="1" Zeit="2">Improved design/transitions</done>
+  <done who="DH" A="1" S="1" Zeit="2">Search in project for opencv lib on linux</done>
+  <done who="DH, RW" A="1" S="1" Zeit="12">Refactoring Trackpane</done>
+  <done who="DH" A="1" S="1" Zeit="2">Load video menu, enter offset</done>
+  <done who="DH" A="1" S="1" Zeit="4">Refactor settingsmenu/config</done>
+  <done who="DH" A="1" S="1" Zeit="4">Extend track functionalities</done>
+</Analyse>

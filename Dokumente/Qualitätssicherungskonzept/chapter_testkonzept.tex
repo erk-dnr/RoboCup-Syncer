@@ -1,0 +1,51 @@
+\chapter{Testkonzept}
+\section{Einführung}
+Das Testkonzept berücksichtigt die Qualität der einzelnen Teile Ihrer Entwicklung (Komponententests)
+sowie die Qualität der Zusammenführung der Teile (Integrations- und Systemtest).\\
+Hierbei halten wir uns grob an die IEEE829 (Testnorm) und an das Continuous Integration Prinzip.
+
+\setlength{\itemsep}{-2pt} 
+\section{Zu testende Eigenschaften}
+\begin{itemize}
+	\item Komponententests
+	\subitem Videopane-Komponente, Log-Parsing, Setzen der Marker, Laden eines Videos
+	\subitem Konfigurationsdateien, Schreiben der .mlt-Dateien, Tonspur, optionale Features
+	\subitem Schaltflächen
+	\item Integrationstests
+	\subitem Zusammenarbeit der Komponenten (z.B. Tonspur und VideoPane)
+	\subitem Synchronisation
+	\subitem Parallele Wiedergabe mit Offsets
+	\item Systemtest
+\end{itemize}
+\setlength{\itemsep}{0pt} 
+
+\section{Testansatz/-strategie}
+Grundsätzlich ist jede/s  Klasse/Funktion/Feature der Software zu testen.\\
+Zu jedem abgeschlossenen Issue wird ein Issue für dessen Tests angelegt.\\
+Am Namen der Tests muss klar erkennbar sein, was getestet wird.
+
+Um eine geordnetes Projekt zu gewährleisten, wird eine Ordnerstruktur angelegt, 
+welche das Zuordnen der Tests vereinfachen soll. \\
+Diese folgt folgendem Schema:
+\begin{center}
+	Package\rightarrow Ordner (z.B. Test)\rightarrow Ordner (z.B. Videopane)\rightarrow\dots\rightarrow KlassennameTest.java
+\end{center}
+
+Beim Bauen des Projekts sollen die Tests durchlaufen.
+Ein Test ist bestanden, wenn die zutestende Funktion den Anforderungen entspricht.
+
+\section{Zuständigkeiten}
+Die Testklasse wird von einem Teammitglied geschrieben, welches nicht die Klasse geschrieben hat. Hiermit soll
+gleichzeitig getestet werden, ob der Code verständlich geschrieben ist.
+Das Anlegen der Testissues obliegt dem Bearbeiter des Features.
+
+\section{Testrelevanz}
+Testrelevanz hat jede Funktion, welche Werte ausgibt, die in der Funktion bearbeitet wurden
+(Simple Getter-Funktionen müssen z.B. nicht getestet werden).
+
+\section{Risiken}
+Ein Risiko ist das planlose Durchführen der Tests. 
+Außerdem ist der Zeitfaktor beim Schreiben der Tests kritisch.
+Deshalb ist das Schreiben der Tests im Fall der Fälle nieder priorisiert als das Schreiben der Features.
+Es muss darauf geachtet werden, dass Funktionen, die klar keine Testrelevanz haben, ausgelassen werden.
+

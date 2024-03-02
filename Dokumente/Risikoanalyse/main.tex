@@ -1,0 +1,47 @@
+\documentclass[a4paper, 12pt, oneside, openany, ngerman, onecolumn]{scrbook}
+
+% Positionierung von Bildern
+\usepackage{float}
+\usepackage{tabularx}
+% Bilder einfügen
+\usepackage{graphicx}
+% URLs, Zeilenumbruch auch bei Bindestrichen
+\PassOptionsToPackage{hyphens}{url}\usepackage[pdfencoding=unicode]{hyperref}
+% Rechtschreibprüfung
+\usepackage{spelling} 
+% Quellcode einbinden
+\usepackage{listings}
+% Farben
+\usepackage[table]{xcolor}
+% TODO-Marker
+\usepackage{todonotes}
+% Subfigures
+\usepackage{subcaption}
+% Math
+\usepackage{mathtools}
+
+\renewcommand{\thesection}{\arabic{section}}
+
+\vspace{\baselineskip}
+
+\definecolor{stringcolor}{RGB}{0,150,20}
+\definecolor{keywordcolor}{RGB}{0,90,230}
+\definecolor{commentcolor}{RGB}{192,32,32}
+
+
+\title{Risikoanalyse 1}
+\author{Dan Häßler}
+\date{\today}
+
+\begin{document}
+\sloppy
+
+\thispagestyle{empty}
+\input{titlepage.tex}
+
+\chapter*{Risikoanalyse}
+\input{section_identifizierung.tex}
+\input{section_bewertung.tex}
+\input{section_management.tex}
+
+\end{document}

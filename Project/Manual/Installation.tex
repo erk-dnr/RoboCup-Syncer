@@ -1,0 +1,35 @@
+\newpage
+\chapter{Installation}
+\section{Dependencies}
+OpenCV 3.4.1 oder aktueller wird zum Ausführen benötigt.
+
+\section{Systeme}
+Das Programm läuft unter folgenden Systemen:
+\begin{itemize}
+\item Windows
+\item Ubuntu 18.04
+\item MacOS
+\end{itemize}  
+
+\section{Einrichtung}
+\subsection{Für Windows und MacOS}
+\begin{enumerate}
+	\item Kommandozeile im Ordner der Sources öffnen.
+	\item Befehl ausführen: \\ mvn package
+\end{enumerate}
+\subsection{Für Linux:}
+Leider müssen Linux Nutzer OpenCV selbst herunterladen und bauen. Dazu muss man folgende Schritte folgen: \\
+\begin{enumerate}
+	\item OpenCV Sources 3.4.1 oder aktueller von \href{https://opencv.org/releases.html}{hier}  herunterladen.
+	\item Inhalte in einem Ordner entpacken.
+	\item Kommandozeile öffnen und folgenden Befehl ausführen:\\ cmake -D BUILD\_SHARED\_LIBS=false <Pfad zum Ordner von Schritt 2>
+	\item Letzten Befehl ausführen:\\ make -j4
+	\item Anschließend den Schritten von dem Abschnitt für Windows und MacOS folgen.
+\end{enumerate}
+
+\section{Ausführen}
+\subsection{Windows}
+java -javaagent:WinFixAgent.jar -jar SyncGod-3.0.jar
+\subsection{Andere Systeme}
+java -jar SyncGod-3.0.jar
+

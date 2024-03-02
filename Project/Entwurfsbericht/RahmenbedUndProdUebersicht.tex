@@ -1,0 +1,16 @@
+\chapter{Rahmenbedingungen und Produktübersicht}
+
+Die Applikation gliedert sich aktuell in 5 wesentliche Bereiche.
+Als zentrale Einheit dient die \textbf{Video-Area}, in der alle geladenen Videos abgespielt und alle Operationen abgebildet werden.
+
+Die \textbf{Kontrolleinheit} enthält den Play-Button zum Abspielen der Videos, eine Stop und Skip-Funktion für 1 Frame, sowie eine Skip-Funktion für eine einstellbare Anzahl von Fames. Die Skipfunktionen wurden jeweils vorwärts und rückwärts implementiert. Deren Frameweite ist aktuell über die Einsetllungen bestimmt. Es gibt zusätzlich ein Drag\&Drop Funktion für Videos/Bilder und die globale Zeit von den Videos wird angezeigt. 
+
+In der \textbf{Track-Area} werden die einzelnen Spuren für die Videos dargestellt, in denen entsprechende Markierungen gesetzt werden können die in der Speicherung im MLT-Format berücksichtigt werden. Die Spuren sind untereinander responsive und erlauben keine Überlappungen. Vom Nutzer erzeugte Überschneidungen werden demnach vom Programm automatisch korrigiert.
+
+Die \textbf{Log-Area} dient der Darstellung der geparsesn Logfiles und selektiert stets das Element das zur aktuellen Videoposition passt. Darüber hinaus kann hier per Klick ein Element ausgewählt werden, wodurch alle Videos zu der entsprechenden Stelle gespult werden.
+
+In der \textbf{Menüleiste} ist bereit das Öffnen und Speichern von MLT Dateien möglich. Man kann auch Videos, Bilder und Logs importieren. Von hier können auch die Einstellungen des Programm gesteuert werden.. 
+
+Damit Komponenten die sich nicht aneinander gekoppelt sind sauber miteinander kommunizieren können, wurde ein Publish-Subscribe System in Form eines Eventbus implementiert. Dieser könnte allerdings noch durch den Einsatz einer Library ersetzt werden.
+Die Anwendung ist in ihrer Größe dynamisch veränderlich, läuft aktuell unter Windows, Linux und MacOS und wird im Laufe der Entwicklung noch einige Verbesserungen bezüglich der Benutzeroberfläche erhalten. 
+Die Darstellung der Videos wird in einem Anwenderfreundlicheren Kontext erweitert. Abdockbare Fenster sind hierbei aktuell im Gespräch.

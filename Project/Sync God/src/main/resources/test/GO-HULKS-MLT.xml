@@ -1,0 +1,217 @@
+<?xml version="1.0" ?>
+<mlt>
+	<profile display_aspect_den="9" display_aspect_num="16" frame_rate_den="1" frame_rate_num="30" height="1080" progressive="1" sample_aspect_den="1" sample_aspect_num="1" width="1920"/>
+	<producer id="v0">
+		<property name="resource">/mnt/GO2018/03_HULKs/03_1_1_30.mkv</property>
+	</producer>
+	<producer id="v1">
+		<property name="resource">/mnt/GO2018/03_HULKs/03_1_2_30.mkv</property>
+	</producer>
+	<producer id="v2">
+		<property name="resource">/mnt/GO2018/03_HULKs/03_1_3_30.MOV</property>
+	</producer>
+	<producer id="v3">
+		<property name="resource">/mnt/GO2018/03_HULKs/03_2_1_1_30.mkv</property>
+	</producer>
+	<producer id="v4">
+		<property name="resource">/mnt/GO2018/03_HULKs/03_2_1_2_30.mkv</property>
+	</producer>
+	<producer id="v5">
+		<property name="resource">/mnt/GO2018/03_HULKs/03_2_3_30.mkv</property>
+	</producer>
+	<producer id="v6">
+		<property name="resource">/mnt/GO2018/03_HULKs/03_2_4_30.MOV</property>
+	</producer>
+	<producer id="v-1">
+		<property name="resource">/mnt/GO2018/03_HULKs/../robocup.png</property>
+	</producer>
+	<producer id="vs0_before">
+		<property name="resource">vs0_before.svg</property>
+	</producer>
+	<producer id="vs0_after">
+		<property name="resource">vs0_after.svg</property>
+	</producer>
+	<producer id="vs1_before">
+		<property name="resource">vs1_before.svg</property>
+	</producer>
+	<producer id="vs1_after">
+		<property name="resource">vs1_after.svg</property>
+	</producer>
+	<producer id="vs2_before">
+		<property name="resource">vs2_before.svg</property>
+	</producer>
+	<producer id="vs2_after">
+		<property name="resource">vs2_after.svg</property>
+	</producer>
+	<producer id="vs3_before">
+		<property name="resource">vs3_before.svg</property>
+	</producer>
+	<producer id="vs3_after">
+		<property name="resource">vs3_after.svg</property>
+	</producer>
+	<producer id="vs4_before">
+		<property name="resource">vs4_before.svg</property>
+	</producer>
+	<producer id="vs4_after">
+		<property name="resource">vs4_after.svg</property>
+	</producer>
+	<producer id="vs5_before">
+		<property name="resource">vs5_before.svg</property>
+	</producer>
+	<producer id="vs5_after">
+		<property name="resource">vs5_after.svg</property>
+	</producer>
+	<producer id="vs6_before">
+		<property name="resource">vs6_before.svg</property>
+	</producer>
+	<producer id="vs6_after">
+		<property name="resource">vs6_after.svg</property>
+	</producer>
+	<producer id="vs7_before">
+		<property name="resource">vs7_before.svg</property>
+	</producer>
+	<producer id="vs7_after">
+		<property name="resource">vs7_after.svg</property>
+	</producer>
+	<producer id="vs8_before">
+		<property name="resource">vs8_before.svg</property>
+	</producer>
+	<producer id="vs8_after">
+		<property name="resource">vs8_after.svg</property>
+	</producer>
+	<producer id="vs9_before">
+		<property name="resource">vs9_before.svg</property>
+	</producer>
+	<producer id="vs9_after">
+		<property name="resource">vs9_after.svg</property>
+	</producer>
+	<producer id="vs10_before">
+		<property name="resource">vs10_before.svg</property>
+	</producer>
+	<producer id="vs10_after">
+		<property name="resource">vs10_after.svg</property>
+	</producer>
+	<producer id="vs11_before">
+		<property name="resource">vs11_before.svg</property>
+	</producer>
+	<producer id="vs11_after">
+		<property name="resource">vs11_after.svg</property>
+	</producer>
+	<tractor id="tractor0">
+		<multitrack>
+			<playlist id="p0" hide="audio">
+				<entry producer="v2" in="0" out="3539"/>
+				<entry producer="v0" in="0" out="599"/>
+				<entry producer="v2" in="4140" out="4499"/>
+				<entry producer="v0" in="960" out="1649"/>
+				<entry producer="v2" in="5190" out="5339"/>
+				<entry producer="v0" in="1800" out="2549"/>
+				<entry producer="v2" in="6090" out="6299"/>
+				<entry producer="v0" in="2760" out="3239"/>
+				<entry producer="v1" in="4710" out="5699"/>
+				<entry producer="v2" in="7770" out="9179"/>
+				<entry producer="v1" in="7110" out="7439"/>
+				<entry producer="v2" in="9510" out="9629"/>
+				<entry producer="v1" in="7560" out="8099"/>
+				<entry producer="v2" in="10170" out="10439"/>
+				<entry producer="v0" in="6900" out="7199"/>
+				<entry producer="v1" in="8670" out="8789"/>
+				<entry producer="v2" in="10860" out="12239"/>
+				<entry producer="v0" in="8700" out="8939"/>
+				<entry producer="v2" in="12480" out="12869"/>
+				<entry producer="v1" in="10800" out="11999"/>
+				<entry producer="v2" in="14070" out="15239"/>
+				<entry producer="v0" in="11700" out="13079"/>
+				<entry producer="v1" in="14550" out="14609"/>
+				<entry producer="v2" in="16680" out="17939"/>
+				<entry producer="v0" in="14400" out="14849"/>
+				<entry producer="v2" in="18390" out="21389"/>
+				<entry producer="v0" in="17850" out="18316"/>
+				<entry producer="v2" in="21857" out="59839"/>
+			</playlist>
+			<playlist id="audio-p0" hide="video">
+				<entry producer="v2" in="0" out="59839"/>
+			</playlist>
+		</multitrack>
+	</tractor>
+	<tractor id="tractor1">
+		<multitrack>
+			<playlist id="p1">
+				<entry producer="v6" in="0" out="42689"/>
+				<entry producer="v3" in="1200" out="1799"/>
+				<entry producer="v6" in="43290" out="43319"/>
+				<entry producer="v5" in="4020" out="5099"/>
+				<entry producer="v6" in="44400" out="47099"/>
+				<entry producer="v5" in="7800" out="7859"/>
+				<entry producer="v4" in="1680" out="3599"/>
+				<entry producer="v6" in="49080" out="50309"/>
+				<entry producer="v4" in="4830" out="6449"/>
+				<entry producer="v6" in="51930" out="54779"/>
+				<entry producer="v4" in="9300" out="10349"/>
+				<entry producer="v6" in="55830" out="56999"/>
+				<entry producer="v5" in="17700" out="18029"/>
+				<entry producer="v6" in="57330" out="57419"/>
+				<entry producer="v4" in="11940" out="13199"/>
+				<entry producer="v6" in="58680" out="59839"/>
+			</playlist>
+			<playlist id="audio-p1" hide="video">
+				<entry producer="v6" in="0" out="59839"/>
+			</playlist>
+		</multitrack>
+	</tractor>
+	<tractor id="tractor2">
+		<multitrack>
+			<playlist id="p2">
+				<entry producer="v-1" in="0" out="14999"/>
+				<entry producer="v-1" in="0" out="8959"/>
+			</playlist>
+			<playlist id="p3">
+				<entry producer="tractor0" in="3360" out="7351"/>
+				<entry producer="tractor0" in="8619" out="13379"/>
+				<entry producer="tractor1" in="41280" out="43839"/>
+				<entry producer="tractor1" in="45500" out="52493"/>
+				<entry producer="tractor1" in="54078" out="59280"/>
+				<entry producer="tractor1" in="59327" out="59776"/>
+			</playlist>
+		</multitrack>
+		<transition mlt_service="luma" in="0" out="29" a_track="0" b_track="1"/>
+		<transition mlt_service="luma" in="3962" out="3991" a_track="1" b_track="0"/>
+		<transition mlt_service="luma" in="3992" out="4021" a_track="0" b_track="1"/>
+		<transition mlt_service="luma" in="8723" out="8752" a_track="1" b_track="0"/>
+		<transition mlt_service="luma" in="8753" out="8782" a_track="0" b_track="1"/>
+		<transition mlt_service="luma" in="11283" out="11312" a_track="1" b_track="0"/>
+		<transition mlt_service="luma" in="11313" out="11342" a_track="0" b_track="1"/>
+		<transition mlt_service="luma" in="18277" out="18306" a_track="1" b_track="0"/>
+		<transition mlt_service="luma" in="18307" out="18336" a_track="0" b_track="1"/>
+		<transition mlt_service="luma" in="23480" out="23509" a_track="1" b_track="0"/>
+		<transition mlt_service="luma" in="23510" out="23539" a_track="0" b_track="1"/>
+		<transition mlt_service="luma" in="23930" out="23959" a_track="1" b_track="0"/>
+	</tractor>
+	<tractor id="tractor3">
+		<multitrack>
+			<playlist id="p4">
+				<entry producer="tractor2" in="0" out="23959"/>
+			</playlist>
+			<playlist id="p5">
+				<entry producer="vs0_before" in="0" out="149"/>
+				<entry producer="vs1_before" in="0" out="3691"/>
+				<entry producer="vs1_after" in="0" out="149"/>
+				<entry producer="vs2_before" in="0" out="149"/>
+				<entry producer="vs3_before" in="0" out="4460"/>
+				<entry producer="vs3_after" in="0" out="149"/>
+				<entry producer="vs5_before" in="0" out="149"/>
+				<entry producer="vs6_before" in="0" out="2259"/>
+				<entry producer="vs6_after" in="0" out="149"/>
+				<entry producer="vs7_before" in="0" out="149"/>
+				<entry producer="vs8_before" in="0" out="6693"/>
+				<entry producer="vs8_after" in="0" out="149"/>
+				<entry producer="vs9_before" in="0" out="149"/>
+				<entry producer="vs10_before" in="0" out="4902"/>
+				<entry producer="vs10_after" in="0" out="149"/>
+				<entry producer="vs11_before" in="0" out="149"/>
+				<entry producer="vs11_after" in="0" out="299"/>
+			</playlist>
+		</multitrack>
+		<transition mlt_service="composite" in="0" out="23959" a_track="0" b_track="1"/>
+	</tractor>
+</mlt>

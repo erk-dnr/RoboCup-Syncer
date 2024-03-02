@@ -1,0 +1,11 @@
+<Analyse von="2019-01-21" bis="2019-02-04" gruppe="tj18b" createdBy="DH" createdAt="2019-02-04"> 
+	<done who="DH, AE" A="1" S="1" Zeit="3">Erweiterung der LogPane</done>
+	<done who="DH, RW" A="2" S="2" Zeit="6">Verlinkung Eventbus, Erweiterung von LogPane und TrackPane</done>
+	<done who="RW" A="2" S="2" Zeit="6">Debugging und Erweiterung Trackpane</done>
+	<done who="DH" A="3" S="1" Zeit="8">Refactoring (Codestyle, Bugs, Smells)</done>
+	<done who="DH" A="3" S="1" Zeit="6">Implementierung OpenCV video player, Optimierung von Multithreading, fixing bugs</done>
+	<done who="DH, JW, TD" A="2" S="2" Zeit="4">Recherche Kompatibilitätsprobleme zwischen OpenCV Java Lib und Linux</done>
+	<done who="DH, TD, SP" A="2" S="2" Zeit="4">Beheben von Kompatibilitätsproblem mit OpenCV</done>
+	<done who="DH" A="1" S="1" Zeit="2">Design GUI</done>
+	<done who="DH, SP" A="1" S="1" Zeit="2">Redesign Website</done>
+</Analyse>

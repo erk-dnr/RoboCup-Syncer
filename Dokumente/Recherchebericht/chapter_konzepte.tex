@@ -1,0 +1,135 @@
+\chapter{Konzepte}
+\section{Fourier Transformation}
+Eine der notwendigen Techniken derer man sich gegebenfalls bedienen muss, um die Bild-Audio Synchronisation durchzuführen ist die Fourier Transformation. Audiosignale bestehen in der Regel aus mehreren überlagernden Sinuswellen unterschiedlicher Frequenzen und Amplituden. Möchte man ein solches Signal nach einem bestimmten Frequenzanteil, wie den Ton einer Pfeife absuchen, ist es notwendig dieses in das Frequenzenspektrum zu zerlegen aus denen es besteht. Die Fourier Transformation kann dies leisten und fungiert so als Prisma der Wellenmechanik. Sei f(t) die Funktion die das zu untersuchende Signal beschreibt, so gilt für das kontinuierliche Spektrum:
+
+\begin{align*}
+F(\omega) = \frac{1}{\sqrt{2\pi}} \int^{+\infty}_{-\infty}\mathrm{e}^{-i\omega t}\,\mathrm{d}x\\
+\end{align*}
+Dabei ist \omega\, die Kreisfrequenz der Schwingung mit \omega\, = 2\cdot \pi \cdot F, t die Zeit. Somit kann durch leichte Umrechnung F auch als Funktion der Frequenz aufgefasst werden. Eine Untersuchung dieser speziellen Stammfunktion ermöglicht das Auffinden des gesuchten Signals und kann somit verwendet werden um das Auftreten des Anpfiffs zu lokalisieren und entsprechend mit dem Video zu synchronisieren. \cite{fourier}
+
+
+\section{Libraries}
+Zur Auswahl der geeigneten Library für die Videobearbeitung kamen vorab 3 Varianten in Frage: VlcJ, OpenCV und Xuggler.
+
+Um die Entscheidung auf fundierten Grundlagen treffen zu können, lag der Beschluss nahe, dass sich je 1 Teammitglied zunächst so tiefgehend wie notwendig mit einer dieser Librarys auseinandersetzt. Dabei wird der Fokus vordergründig auf 3 Aspekte gelegt.
+
+Zum einen ist die Bedien- und Modularisierbarkeit des strukturellen Aufbaus, der durch die Verwendung einer externen Quelle partiell vorgegeben wird, sehr wichtig um insbesondere den GUI-Aufbau klar von der Video-Logik trennen zu können und die Aufgabenverteilung schließlich möglichst unabhängig gestalten zu können. Darüber hinaus sollte das verwendete Package selbstverständlich alle notwendigen Funktionalitäten ermöglichen und dem Entwickler dabei idealerweise umfassende Kontrolle über sämtliche Bearbeitungschritte gewähren. Zentrale Funktionen sind das Abspielen von Videos, Sprünge zu spezifischen Punkten, sowie Einzelsprünge um je ein Frame. Das Bearbeiten (Schneiden) und speichern von Videodaten ist ebenso unverzichtbar wie das konkatenieren von Teilvideos. Für zahlreiche Zusatzfeatures wäre es zudem wünschenswert, wenn die Möglichkeit bestünde, einzelne Frames als Bilder herauszuziehen und zu analyiseren(automatischer Kamerawechsel), sowie eine seperate Bearbeitung der  Tonspur(Audio-Synchronisation). Es muss möglich sein, mehrere Videofiles parallel abzuspielen und jeden Einzelnen separat kontrollieren zu können. Das Design des Players und der entsprechenden Kontrolleinheiten wie Buttons oder Slider sollte dabei möglichst vollständig in der Hand des Entwicklers liegen.
+
+Idealerweise ermöglicht der Aufbau des Packages das Anlegen eines kleinen Frameworks, mit dessen Hilfe die benötigen Funktionen einfach und ohne gröbere Schierigkeiten in ein vorgegebenes GUI-Konzept implementiert werden können.
+
+Im Folgenden werden die Rechercheergebnisse zu den einzelnen Librarys vorgestellt.
+
+\subsection{OpenCV}
+Bezüglich der Einrichtung des packages wurden zunächst negative Eindrücke gesammelt. Insbesondere für Java war es mit einigen Schwierigeiten verbunden eine saubere Funktionsweise zu erzeugen. Das Fehlen einiger DLL-Dateien sowie die Optimierung für Eclipse machten die Einrichtung unter Netbeans zu einer zeitraubenden Angelegenheit.
+
+Die Dokumentation ist zwar weitestgehend vollständig, aber nicht zwingend ausführlich, sodass von Zeit zu Zeit einige Fragen bezüglich verschiedener Funktionsargumente oder den notwendigen Imports zur Verwendung bestimmter Klassen offen bleiben.  Es finden sich aber zahlreiche Beispielanwendungen im Netz, durch die sich die meisten Dinge ohne zu großen Aufwand recherchieren lassen. Dennoch bleibt hier ein kleiner Makel.
+
+Die erste Programmierung mit OpenCV hingegen erwies sich als sehr angenehm. Das Abspielen einer lokalen Videodatei wird über das laden in ein VideoCapture Objekt, und das Anlegen eines Threads mit entspechendem Timer verwirklicht. Dabei wird jedes abgespielte Frame tatsächlich in die Hand genommen, was sehr viel Kontrolle und Spielraum für Funktionen ermöglicht. Jedes Frame kann einzeln bearbeitet, in Kanäle gesplittet, als Java Image erzeugt oder per Stream in Schreibbare Video – Datentypen geschoben werden, wodurch zahlreiche der gewünschten Funktionen bereits abgedeckt sind. 
+
+Da sämtliche Videobearbeitungsoptionen in Streams ablaufen, wird es notwendig für sämtliche Cut- oder Merge-Prozesse jedes Frame einzeln abzugreifen. Die Befürchtung hier auf Performanceprobleme aufzulaufen liegt nahe. Insofern ist hier ein wenig Aufbereitung notwendig. 
+
+Dabei besteht die Überlegung, beim Laden jedes Videos alle Frames in ArrayListen vorzuladen. Sämtliche Operationen  für Abspielen und Spulen könnten dann auf diesen Listen durchgeführt werden. Der große Vorteil ist hierbei, dass für das Schneiden und Konkatenieren von Teilvideos einfach Listen gekürzt oder zusammengefügt werden können. Neben der zu erwartenden Verbesserung der Performance ist hierbei auch die Transparenz im Bearbeitungsprozess für den Entwickler deutlich höher, da man nicht mehr auf die vorgegebenen Funktionalitäten der Library angewiesen wäre, sondern alle Prozesse selbst implementieren könnte. Erst beim Speichern der Videos könnte man wieder OpenCV – Capture und Recorder Instanzen erzeugen, um schließlich in Dateien zu schreiben. Das Package würde hierbei nur noch für die Rahmenprozesse benötigt werden und alle nötigen Freiheiten ermöglichen. 
+
+Das zentrale Problem jedoch ist die fehlende Audio-Unterstützung. Möchte man neben den visuellen Frames auch Audio entsprechend anpassen und editieren, ist OpenCV leider die falsche Wahl. Hierfür müsste man also zusätzliche packages wie FFmpeg heranziehen, wobei sich die Frage stellt, inwieweit sich diese sinnvoll kombinieren lassen.
+
+Grundsätzlich kann man OpenCV eher eine partielle Eignung für die vorgegebene Zielsetzung attestieren. Auch wenn nur ein geringer Teil des Funktionsumfangs benötigt wird, lässt allein der Grundaufbau der Library zu, jedwede nötigen Prozesse einfach selbst zu implementieren und dadurch keine Einbußen in der Strukturierung seines Programmes zu verzeichnen. Darüber hinaus stellt OpenCV entsprechende Timer-Elemente zur Verfügung, die die Organisation der Abspielprozessse in Threads übernimmt und somit sehr viel Progammierbürokratie abwickelt.
+
+Negativ bewerten muss man die geringe Ausgereiftheit gegenüber der Varianten für C++ und Python. Wo es dort z.b. die Möglichkeit gibt, bestimmte Frames direkt über Indizierung abzugreifen, bleibt für Java bislang nur die Möglichkeiten dorthin zu iterieren, was gegebenfalls bei größeren Datein zu Performanceprobleme führen könnte. Auch die Gefahr für Abstürze und Exceptions ist durch das nicht 100%ig transparente Handling der Threads zu erwähnen, dürfte sich aber mit zunehemnder Erfahrung nicht als allzu große Gefahr erweisen. 
+Die fehlende Unterstützung für die Tonausgabe ist allerdings ein großes Problem für das vorliegende Projekt, und es müsste geklärt werden inwieweit sich dies auffangen ließe. Sich von einer zweiten Library abhängig zu machen wäre aufgrund des Wesens von OpenCV zwar zu verschmerzen, es müsste jedoch geklärt werden ob beispielsweise FFmpeg nicht bereits allein in der Lage wäre, alles notwendige zu leisten. Durch den geringen Eingriff in die Programmphilosophie ist dennoch nahezulegen, OpenCV  zumindest einzubeziehen. Sollte sich eines der anderen Packages aber als umfassender und ähnlich unkompliziert erweisen, ist es natürlich ratsam eher auf dieses zurückzugreifen. 
+
+\newpage
+\subsection{Xuggler}
+\textbf{Xuggler}
+\begin{quote}
+“Xuggler is the easy way to uncompress, modify, and re-compress any media file (or stream) from Java.”\cite{xuggle_def}
+\end{quote}
+Xuggler ist eine Library, mit der man leicht Videodateien manipulieren kann. Die Installation der Library war mühsam, da viele Dependencies bestehen und nach weiterer Recherche stellte sich heraus, dass Xuggler bekannte Probleme mit einigen Prozessorarchitekturen hat, ich verwendete Java 32bit um das Problem zu lösen, grundsätzlich ist es aber möglich es auch auf Java 64bit zu verwenden. Die Dokumentation ist fast vollständig, zusätzlich existieren mehrere Code Beispiele, Stack Overflow Beiträge, sowie Einführungen in die Library. Xuggler baut auf FFmpeg auf, sodass der Code überall laufen sollte, wo auch FFmpeg läuft.
+
+Xuggler bietet zwei verschiedene APIs, welche für gleiche Zwecke benutzt werden können.
+\begin{description}
+	\item [MediaTool API] ist eine einfach zu benutzende API zum Modifizieren von Videos/Medien in Java. Dabei abstrahiert die API die kleinen Details von Containern, Codecs und anderem, sodass der Fokus auf den Medien liegt.
+	Veranschaulicht wurde das im Beispielprogramm, trotzdem ist es möglich auf die unterliegenden Xuggler Objekte zuzugreifen und sie zu manipulieren.
+	\item [Xuggler Advanced API] ermöglicht es, konträr zu der MediaTool API, auf die Details der Videomanipulation einzugehen, allerdings wird damit auch die Komplexität erhöht.
+\end{description}
+
+Das erste Programm stellte sich als schnell geschrieben heraus, im folgenden ein beispielhaftes Programm zur Wiedergabe eines Videos mit Audio mit Benutzung der MediaTool API
+
+\lstinputlisting[style=javastyle, caption={Videoausgabe mit Audio}]{sourcecode/xuggler_videoexample.java}
+
+Im Beispielprogramm sehen wir die Initialisierung eines IMediaReader und IMediaViewer. Anschließend, haben wir dem IMediaReader den IMediaViewer hinzugefügt. Solange der IMediaReader nun Pakete liest sehen wir die Ausgabe.
+\newpage
+\textbf{IMediaReader}
+\begin{quote}
+“An IMediaReader opens up a media container, reads packets from it, decodes the data, and then dispatches information about the data to any registered IMediaListener objects”\cite{xuggle_imediareader}
+\end{quote}
+\textbf{IMediaViewer}
+\begin{quote}
+“You can use this object to attach to a IMediaReader or a IMediaWriter to see the output as they work.”\cite{xuggle_imediaviewer}
+\end{quote}
+
+Im Folgenden noch die grundlegende Struktur einer Medienpipeline, die eine Kette von Medienmanipulation an einem Medium ausführt. (hier: ein Zeitstempel hinzufügen und die Lautstärke auf 10\% setzen)
+
+\lstinputlisting[style=javastyle, caption={Media Pipeline\cite{xuggle_mediapipeline}}]{sourcecode/xuggler_mediapipeline.java}
+
+Hierbei wird es nochmal deutlich \- die MediaTool API ist einfach zu benutzen und lässt trotzdem Manipulierungen der Medien zu. Resümierend ist also zu sagen, dass die Library optimal zu unserem Anwendungsfall passt, es ermöglicht einfache Komponenten schnell zu entwickeln, aber, falls benötigt, auch komplexere Komponenten zu realisieren. Insbesondere die Anbindung an FFmpeg ist vorteilhaft, da Xuggler so auch fast jedes Audio- und Videoformat unterstützt. Dies und die Dokumentation sowie Code Examples bieten eine umfassende Library, die gut zu unseren Anforderungen passt.
+
+
+\newpage
+\subsection{VLCJ}
+VlcJ ist eine Library für Java, welche Open-Source, von Caprica Software, entwickelt wird. VlcJ soll alles implementieren, was LibVlc enthält.
+
+Die Library ist sehr gut dokumentiert, was zu schnellem Verständnis geführt hat und Vorteile für die Verwendung mit sich bringt. Auf der Website des Entwicklers finden sich zahlreiche Tutorials sowie ausreichend Anwendungsbeispiele in Foren. Das Entwickeln mit VlcJ ist recht unkompliziert. In wenigen Minuten hat man einen funktionsfähigen MediaPlayer implementiert.
+Hierzu müssen zuerst die libVlc\cite{vclj_libVlc}-Daten auf dem Gerät gefunden werden. Dies wird mit einer Methode registerLibrary() erledigt, welche im Konstruktor des Players aufgerufen wird.
+
+\lstinputlisting[style=javastyle, caption={Registrieren der Library}]{sourcecode/vlcj_registerLibrary.java}
+
+Um den Player darzustellen wählt wählt man eine Canvas-Komponente als VideoSurface\cite{vlcj_videoSurface}. Auf diesem Canvas wird der Player konfiguriert.
+
+\lstinputlisting[style=javastyle, caption={Konfigurieren des Players (buildFrame()\cite{vclj_samplePlayer})}]{sourcecode/vlcj_buildFrame.java}
+
+Das zurückgegebene Frame-Objekt ist der Bereich, in dem der Player später dargestellt wird. Da es auch Factories für diese Objekte geben kann, wirkt es als könnte man so mehrere Player parallel laufen lassen.
+
+Dann erstellt man sich noch ein EmbeddedMediaPlayer\cite{vclj_embeddedMediaPlayer}-Objekt. Diesem wird die VideoSurface zugewiesen, außerdem ist das Abpielen mit diesem Objekt möglich.
+
+\lstinputlisting[style=javastyle, caption={CreatePlayer() (createPlayer()\cite{vclj_samplePlayer})}]{sourcecode/vlcj_createPlayer.java}
+
+Mit dem Aufrufen der Play-Methode übergibt man einen Pfad an den Player und das Video wird abgespielt.
+
+Genau ab diesem Punkt zeigen sich allerdings erste Probleme. Denn VlcJ bietet keine Möglichkeit auf Listen von  Frames oÄ zu arbeiten. Die Möglichkeit auf Tonspuren einzeln zuzugreifen ist zwar gegeben, aber auch hier wurde keine Funktion zum schneiden oder editieren gefunden. Die Library scheint eher Ihren Zweck darin zu haben, Media-Player-Features zur Verfügung zu stellen. Außerdem wird vom Entwickler davon abgeraten, mit mehreren eingebetteten Playern gleichzeitig zu arbeiten. Dies ist auf jeden Fall von Nöten.
+
+
+\subsection{FFmpeg}
+FFmpeg ist ein Kommandozeilen-Programm, welches vielseitige Funktionalitäten der Video- und Audio-Manipulation vereint. Außerordentlich mächtig ist das Tool im Konvertieren, da es mehr als nur alle gängigen Video- und Audio-Codecs unterstützt.
+
+Die Tools sind namentlich in 4 Kategorien eingeteilt: ffmpeg, ffplay, ffprobe, ffserver.\\
+ffmpeg: Hauptsächlich für Konvertierungen zuständig.\\
+ffplay: Simpler Media Player - nutzt die ffmpeg und die externe SDL (Simple DirectMedia Layer) Libraries.\\
+ffprobe: Anzeigen von Informationen aus Multimedia-Streams.\\
+ffserver: Streaming-Server für Multimedia-Übertragungen (auch live).
+
+Der andere Bestandteil sind Libraries. Besonders erwähnenswert sind dabei libavcodec und libavformat, aber es gibt noch ein paar weitere.\\
+libavcodec: Stellt ein Framework mit zahlreiche Encoder und Decoder bereit.\\
+libavformat: Stellt ein Framework für Multiplexing-Funktionen bereit. Dadurch lassen sich Video-, Audio- und Untertitel-Spuren "muxen" und "demuxen". Beim Muxing werden mehrere Spuren zu einem Stream zusammengeführt. Umgekehrt dazu, wird beim Demuxing ein Stream in mehrere parallele Spuren aufgesplittet.
+
+
+Zu relevanten Anwendungsbereichen/beispielen zählt u.a.:
+\begin{itemize}
+\item springen zu bestimmtem Frame im Video
+\item schneiden/speichern von Audio/Video
+\item zusammenfügen mehrerer Videos
+\end{itemize}
+
+Da FFmpeg in C verfasst ist, existiert keine native Java-Kompatibilität, sodass auf einen Wrapper zurückgegriffen werden muss.
+
+Dieser Umstand erweist sich als hinderlich für die alleinige Verwendung von FFmpeg unter Java, da es zwar in großen, gut dokumentierten und erhaltenen Bibliotheken (z.B. Xuggle) in Java genutzt wird, allerdings nur sehr spezifische (nur ausgewählte Funktionen), oberflächliche (voller Funktionsumfang, jedoch sehr unübersichtlich/schlecht dokumentiert) oder veraltete (FFmpeg wird gelegentlich aktualisiert) Wrapper für pure FFmpeg-Funktionalität existieren.
+
+Desweiteren verlassen sich viele dieser Wrapper direkt auf die eigentliche (platformabhängige) FFmpeg-Programmgruppe (ffmpeg, ffplay, ffprobe usw.), was einer plattformunabhängigen Programmierphilosophie stark entgegen wirkt.
+
+Da FFmpeg, wie schon erwähnt, in größeren, prominenten Java-Bibliotheken (Xuggle, OpenCV/JavaCV) als Teilgrundlage ihrer Funktionalität Verwendung findet, bietet es sich an, eine dieser Bibliotheken für die Entwicklung zu wählen, um einen Kompromiss zwischen vollständiger FFmpeg-Funktionalität und leichtem Verständis, vollständiger Dokumentation und Intuitivität beim verwenden dieser unter Java zu gewährleisten.
+
+\subsection{JavaCV}
+JavaCV ist eine Open-Source-API von Bytedeco und bezieht gleich mehrere Libraries ein - unter anderem OpenCV, FFmpeg und OpenKinect.
+
+Die Installation bzw. Einbindung in IntelliJ IDEA war erfreulich simpel. Auch eine Automatisierung mittels Maven oder Gradle ist möglich - es besteht nur eine Dependency. Die Entwickler geben zu, dass die Dokumentation lückenhaft ist. Zunächst erst einmal ist auf github gar keine Dokumentation auffindbar, stattdessen verweist man auf ein paar Beispielcodes und Demo-Projekte. Glücklicherweise aber existiert eben diese auf der Homepage der Entwickler \cite{javacv_api_doc}. Leider sind aber die meisten Klassen und Methoden nicht erläutert, was für Einsteiger das Zurechtfinden und Erlernen erschwert. Einfache Anforderungen, wie z.B. das Auslesen von Metadaten einer Datei oder die Ausgabe der Zeitstempel einzelner Frames, ist in einer überschaubaren Menge an Code realisierbar.
+
+Für unser Projekt wäre es aber auch notwendig, mehrere Video- und Audio-Streams gleichzeitig ablaufen zu lassen und zu synchronisieren. FFmpeg kann dies und zusätzlich besteht damit die Möglichkeit Videos zu schneiden. Mir zumindest ist es aber schwer gefallen, die gesuchten Funktionalitäten in den Tiefen von JavaCV zu finden und praktisch anzuwenden. Aber theoretisch betrachtet kann JavaCV alle unsere Anforderungen verwirklichen. Kompatibilitätsprobleme aufgrund der unterschiedlichen Video-Formate dürften auch ausgeschlossen sein, dank der vielen Codecs, die FFmpeg mit sich bringt. Zur Performance lassen sich zum jetzigen Zeitpunkt nur Vermutungen anstellen. Da JavaCV eine langjährige Entwicklung durchgangen hat und stets weiterentwickelt wird und aufgrund der Tatsache, dass JavaCV sich für Multimedia-Projekte in Java etabliert hat, ist die Performance positiv einzuschätzen.

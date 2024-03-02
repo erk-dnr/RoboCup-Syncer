@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+
+<MenuBar fx:id="menuBar" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="syncgod.menu.Menu">
+    <Menu mnemonicParsing="false" text="Project">
+        <MenuItem onAction="#openProject" text="Open Project" />
+        <MenuItem onAction="#saveProject" text="Save Project" />
+        <Menu mnemonicParsing="false" text="Import">
+            <MenuItem onAction="#loadVideo" text="Videos" />
+            <MenuItem onAction="#loadImage" text="Picture" />
+            <MenuItem onAction="#loadLog" text="GCC Log" />
+        </Menu>
+        <SeparatorMenuItem mnemonicParsing="false" />
+        <MenuItem onAction="#loadSettingsMenu" text="Settings" />
+        <SeparatorMenuItem mnemonicParsing="false" />
+        <MenuItem onAction="#closeApp" text="Close" />
+    </Menu>
+    <Menu fx:id="buildMenu" mnemonicParsing="false" styleClass="buildMenuButton" text="MLT">
+        <MenuItem onAction="#buildMlt" text="Unspecified Action" />
+    </Menu>
+    <Menu mnemonicParsing="false" text="?">
+        <MenuItem onAction="#getManual" text="Manual" />
+        <MenuItem onAction="#about" text="About" />
+        <MenuItem onAction="#help" text="Help" />
+    </Menu>
+</MenuBar>

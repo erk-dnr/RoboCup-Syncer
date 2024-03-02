@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Analyse von="2018-10-29" bis="2018-11-05" gruppe="tj18b" createdBy="RW" createdAt="2018-11-02"> 
+  <done who="RW,SP,DH,ED,JW,TD,AE" A="1" S="1" Zeit="1"> Besprechung Rollenverteilung, Gruppenleiter, Termine für Treffen</done>
+  <done who="RW,SP,DH,ED,JW,TD,AE" A="2" S="1" Zeit="1"> Zusammentragen möglicher Risiken, grundsätzliche Besprechung</done>
+  <done who="RW" A="2" S="2" Zeit="2">Aufsetzen und Upload der Team-Website</done>
+  <done who="RW" A="1" S="1" Zeit="0.5">Aufsetzen und pushen des Staerken und Schwaechen md-Files</done>
+  <done who="SP,DH,ED,JW,TD,AE" A="1" S="1" Zeit="0.5">Ausfüllen und pushen Staerken und Schwaechen, Aufwand.xml Team.html</done>  
+  <done who="SP" A="1" S="1" Zeit="0.5">Vorläufiges Zusammentragen der Risiken, Überlegen eines Ratings</done>  
+  <done who="SP" A="2" S="2" Zeit="2.5">Issues angelegt, Issuesystem erklärt, git erklärt</done>  
+  <done who="DH" A="3" S="2" Zeit="3.5">Erstellen der Risikoanalyse</done>  
+</Analyse>
+
+

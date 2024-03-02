@@ -1,0 +1,66 @@
+\documentclass[a4paper, 11pt, oneside, openany, ngerman, onecolumn]{scrbook}
+
+\usepackage[ngerman]{babel}
+% Positionierung von Bildern
+\usepackage{float}
+% Bib
+\usepackage{natbib}
+% Tabelle formatieren
+\usepackage{tabularx}
+% Bilder einfügen
+\usepackage{graphicx}
+% URLs, Zeilenumbruch auch bei Bindestrichen
+\PassOptionsToPackage{hyphens}{url}\usepackage[pdfencoding=unicode]{hyperref}
+% Rechtschreibprüfung
+\usepackage{spelling} 
+% Quellcode einbinden
+\usepackage{listings}
+% Farben
+\usepackage[table]{xcolor}
+% TODO-Marker
+\usepackage{todonotes}
+% Subfigures
+\usepackage{subcaption}
+% Math
+\usepackage{mathtools}
+% Für Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancypagestyle{plain}{}
+% Header
+\rhead{Tomas Daetz}
+\lhead{\today}
+\chead{tj18b}
+\renewcommand{\headrulewidth}{0pt}
+% Foot
+\renewcommand{\footrulewidth}{0pt}
+
+\renewcommand{\clearpage}{}
+\vspace{\baselineskip}
+
+\definecolor{stringcolor}{RGB}{0,150,20}
+\definecolor{keywordcolor}{RGB}{0,90,230}
+\definecolor{commentcolor}{RGB}{192,32,32}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\begin{document}
+\sloppy
+
+\frontmatter
+\input{titlepage.tex}
+\tableofcontents
+
+
+\mainmatter
+\input{chapter_visionen.tex}
+\input{chapter_rahmenbedingungen.tex}
+\input{chapter_kontext.tex}
+\input{chapter_funktionaleanforderungen.tex}
+\input{chapter_nichtfunktionaleanforderungen.tex}
+\input{chapter_qualitaetsmatrix.tex}
+\input{chapter_lieferumfang.tex}
+\input{chapter_vorprojekt.tex}
+\input{chapter_glossar.tex}
+\end{document}

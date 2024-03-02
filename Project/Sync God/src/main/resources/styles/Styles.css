@@ -1,0 +1,387 @@
+/* All Elements */
+
+.root * {
+    -fx-text-fill: #f2f5f4;
+    -fx-font-family: Roboto;
+}
+
+/* Main Window */
+
+.mainWindow {
+    -fx-background-color: #0a0a0b;
+    -fx-font-size: 15px;
+}
+
+/* Splitpane */
+
+.split-pane {
+    -fx-background-color: transparent;
+    -fx-box-border: transparent;
+}
+
+.split-pane:horizontal > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+
+.split-pane:vertical > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+
+/* Menubar */
+
+.menu-bar {
+    -fx-background-color: linear-gradient(rgba(69, 69, 69, 1) 7%, rgba(36, 36, 38, 1) 93%, rgba(36, 36, 38, 1) 100%);
+    -fx-effect: dropshadow(two-pass-box, #000, 10, 0, 0, 0);
+}
+
+.menu-bar:selected {
+    -fx-background-color: transparent;
+}
+
+.menu:hover, .menu:focused, .menu:showing {
+    -fx-background-color: #1a1a1a;
+    -fx-effect: none;
+    -fx-text-fill: #ee4d2e;
+}
+
+.menu-bar .context-menu {
+    -fx-background-color: linear-gradient(#1a1a1a 0%, #1c1c1c 100%);;
+}
+
+.menu-item:focused {
+    -fx-background-color: transparent;
+}
+
+.menu-item:focused .label {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ee4d2e;
+}
+
+.buildMenuButton {
+    -fx-background-insets: 0,0 0 3 0, 0 0 3 0, 0 0 3 0;
+    -fx-background-radius: 40;
+    -fx-background-color: linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%), #9d4024, #d86e3a, radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 1,0,0,1 );
+    -fx-font-size: 0.5em;
+}
+
+
+
+/* Tab Pane */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #09090a;
+}
+
+.tab-pane:top .tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.833em 0.166667em 0.0em 0.0em;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #111;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #1a1a1a;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab:selected .tab-label {
+    -fx-background-color: #1a1a1a;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 4;
+}
+
+/* Text Field */
+
+.text-field {
+    -fx-text-fill: #000000;
+}
+
+/* Titled Pane */
+
+.titled-pane {
+    -fx-background-color: transparent;
+    -fx-border: none;
+}
+
+.titled-pane > .title {
+    -fx-background-color: linear-gradient(rgba(69, 69, 69, 1) 7%, rgba(36, 36, 38, 1) 93%, rgba(36, 36, 38, 1) 100%);
+    -fx-background-insets: 0, 0, 0;
+}
+
+.titled-pane > *.content {
+    -fx-background-color: #1a1a1a;
+    -fx-background-insets: 0, 0 0 0 0;
+    -fx-border-color: transparent;
+}
+
+/* Scrollpane, Listview */
+
+.scroll-pane, .list-view {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-color: transparent;
+    -fx-border: none;
+    -fx-effect: dropshadow(two-pass-box, #000, 5, 0, 0, 0);
+}
+
+.scroll-bar, .corner {
+    -fx-background-color: transparent;
+    -fx-border: none;
+}
+
+.decrement-button:hover, .increment-button:hover {
+    -fx-background-color: transparent;
+    -fx-border: none;
+    -fx-effect: dropshadow(two-pass-box, #ee4d2e, 5, 0, 0, 0);;
+}
+
+.scroll-pane .scroll-bar, .scroll-pane .corner {
+    -fx-background-color: transparent;
+    -fx-border: none;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #4a4e51;
+    -fx-border: none;
+}
+
+.list-view .list-cell:even {
+    -fx-background-color: #1a1a1a;
+}
+
+.list-view .list-cell:odd {
+    -fx-background-color: #1d1d1d;
+}
+
+.list-view .list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: rgba(238, 77, 46, 0.4);
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-text-fill: #ee4d2e;
+}
+
+/* Buttons */
+
+.button {
+    -fx-text-fill: #f2f5f4;
+    -fx-background-color: #1a1a1a;
+    -fx-effect: dropshadow(two-pass-box, #000, 2, 0, 0, 0);
+}
+
+.button:hover {
+    -fx-text-fill: #ee4d2e;
+}
+
+.labelOverlay {
+    -fx-text-fill: #f2f5f4;
+    -fx-background-color: #161618;
+    -fx-border-color: black;
+}
+
+
+/* TrackPane */
+
+.markers {
+    -fx-effect: dropshadow(GAUSSIAN, whitesmoke, 0.0, 2.0, -2.0, 0.0);
+}
+
+.markerRegion {
+    -fx-background-color: linear-gradient(from 41px 41px to 43px 43px, reflect,  rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.8)  47%);
+    -fx-background-radius: 4;
+}
+
+.progress {
+    -fx-background-color: transparent;
+}
+
+.progressPaneLabel {
+    -fx-font-size: 20px;
+}
+
+.progressMarkerPane {
+    -fx-background-color: black;
+}
+
+.progressLine {
+    -fx-background-color: #6a6e71;
+}
+
+.tickRegion {
+    -fx-background-color: #000000;
+}
+
+.trackBoxOffset {
+    -fx-background-color: linear-gradient(#000 0%, #161618 100%);
+}
+
+.trackBoxLabelHolder{
+    -fx-background-color: linear-gradient(#000 0%, #161618 100%);
+    -fx-background-radius: 4 0 0 4;
+}
+
+.trackBoxFrameLabel, .tickLabel {
+    -fx-font-size: 12px;
+}
+
+.trackBoxLabel {
+    -fx-font-size: 15px;
+}
+
+
+.trackBoxBaseStyle {
+    -fx-background-color: linear-gradient(#000 0%, #161618 100%);
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+.trackBoxPane {
+    -fx-background-radius: 4;
+}
+
+/* ControllerPane */
+
+.videoPane {
+    -fx-background-color: transparent;
+    -fx-effect: null;
+}
+
+.videoPane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Buttons */
+
+.deleteButton {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-graphic: url("../icons/deletebutton.png");
+    -fx-effect: dropshadow(two-pass-box, #222, 2, 0, 0, 0);
+    -fx-border-width: 0;
+    -fx-max-width: 16px;
+    -fx-max-height: 16px;
+}
+
+.deleteButton:hover {
+    -fx-graphic: url("../icons/deletebuttonhover.png");
+}
+
+.textButton {
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-border-width: 1;
+}
+
+.forward, .fastforward, .back, .fastback, .togglePlayButton {
+    -fx-background-color: rgba(22, 22, 24, 0.8);
+    -fx-border-color: rgba(0, 0, 0, 0.9);
+    -fx-background-insets: 0px;
+}
+
+.periphButton {
+    -fx-background-insets: 0px;
+}
+
+.togglePlayButton {
+    -fx-background-radius: 48;
+    -fx-border-radius: 48;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(two-pass-box, #000, 2, 0, 0, 0);
+}
+
+.videoTimeLabel {
+    -fx-background-color: rgba(22, 22, 24, 0.8);
+    -fx-padding: 5;
+    -fx-border-color: rgba(0, 0, 0, 0.9);
+    -fx-border-width: 1;
+}
+
+.forward, .fastforward, .back, .fastback {
+    -fx-background-radius: 32;
+    -fx-border-radius: 32;
+    -fx-border-width: 1;
+}
+
+.fastforward {
+    -fx-graphic: url("../icons/doubleright.png");
+}
+
+.forward {
+    -fx-graphic: url("../icons/right.png");
+}
+
+.back {
+    -fx-graphic: url("../icons/left.png")
+}
+
+.fastback {
+    -fx-graphic: url("../icons/doubleleft.png");
+}
+
+.togglePlayButton {
+    -fx-graphic: url("../icons/play.png");
+}
+
+.togglePlayButton:hover {
+    -fx-background-color: #161618;
+    -fx-border-color: black;
+    -fx-graphic: url("../icons/playhover.png");
+}
+
+.togglePlayButton:selected {
+    -fx-graphic: url("../icons/pause.png");
+}
+
+.togglePlayButton:selected:hover {
+    -fx-graphic: url("../icons/pausehover.png");
+}
+
+.fastforward:hover {
+    -fx-background-color: #161618;
+    -fx-border-color: black;
+    -fx-graphic: url("../icons/doublerighthover.png");
+}
+
+.forward:hover {
+    -fx-background-color: #161618;
+    -fx-border-color: black;
+    -fx-graphic: url("../icons/righthover.png");
+}
+
+.back:hover {
+    -fx-background-color: #161618;
+    -fx-border-color: black;
+    -fx-graphic: url("../icons/lefthover.png")
+}
+
+.fastback:hover {
+    -fx-background-color: #161618;
+    -fx-border-color: black;
+    -fx-graphic: url("../icons/doublelefthover.png");
+}
+
+
+/* Help Menu */
+
+.helpPane {
+    -fx-background-color: #161618;
+    -fx-opacity: 0.3;
+}
+
+.helpPane:hover {
+    -fx-opacity: 0.1;
+}
+
+.helpTextFlow {
+    -fx-background-color: #4a4e51;
+}
+
+.progressMarker {
+    -fx-background-color: #000;
+}

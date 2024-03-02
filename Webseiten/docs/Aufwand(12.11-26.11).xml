@@ -1,0 +1,12 @@
+<Analyse von="2018-11-12" bis="2018-11-26" gruppe="tj18b" createdBy="RW" createdAt="2018-11-18"> 
+  <done who="RW,SP,DH,ED,JW,TD,AE" A="1" S="1" Zeit="1"> Aufgabenverteilung Lastenheft, Milestones und Issues definieren</done>
+  <done who="RW" A="2" S="2" Zeit="2">Schreiben einer Testklasse zum parsen der Logs</done>
+  <done who="RW" A="2" S="2" Zeit="2">Schreiben der funktionellen Anforderungen für das Lastenheft</done>
+  <done who="JW" A="3" S="2" Zeit="3">Anlegen und Erklären der Qualitätsmatrix im Lastenheft</done>
+  <done who="TD" A="2" S="1" Zeit="2">Lastenheft Struktur erstellen, ausfüllen von Visionen und Ziele</done>
+  <done who="ED" A="1" S="2" Zeit="2">Schreiben des Abschnitts Kontext und Überblick</done>
+  <done who="SP" A="2" S="1" Zeit="3">Schreiben des Abschnitts Rahmenbedingungen und Produkteinsatz</done>
+  <done who="SP, DH" A="3" S="1" Zeit="4">Korrigieren des Latextemplates</done>
+  <done who="DH" A="2" S="1" Zeit="2">Schreiben des Abschnitts Produktdaten und nicht-funktionale Anforderungen</done>
+  <done who="AE" A="2" S="1" Zeit="3">Schreiben der Abschnitte Lieferumfang/Abnahmekriterien sowie Vorprojekt</done>
+</Analyse>

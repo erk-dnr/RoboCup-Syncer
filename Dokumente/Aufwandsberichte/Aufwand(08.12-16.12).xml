@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Analyse von="2018-12-08" bis="2018-12-16" gruppe="tj18b" createdBy="RW" createdAt="2018-12-08"> 
+  <done who="TD, JW" A="3" S="1" Zeit="4">Projektplan erzeugt</done>
+  <done who="ED" A="3" S="2" Zeit="6">QS-Konzept Abschnitt Dokumentationskonzept gefuellt, Latex konfiguriert</done>
+  <done who="AE,RW" A="2" S="2" Zeit="3">Releaseplan erstellt</done>
+  <done who="SP" A="2" S="1" Zeit="4">QS-Konzept Testkonzept ausgearbeitet, Latex, Glossar Lastenheft angepasst"></done>
+  <done who="DH" A="2" S="1" Zeit="3">QS-Konzept Organisatorische Festlegungen, Lastenheft angepasst"></done>
+  <done who="AE" A="2" S="1" Zeit="2">Inhalte ergaenzt, Latex</done>
+</Analyse>
+
+

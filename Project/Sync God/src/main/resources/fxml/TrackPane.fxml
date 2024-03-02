@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<ScrollPane fx:id="trackPane" fitToHeight="true" fitToWidth="true" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="syncgod.track.TrackPane">
+    <StackPane fx:id="trackStackPane" alignment="TOP_LEFT">
+        <FlowPane fx:id="trackContent" vgap="5.0">
+            <padding>
+                <Insets top="5.0" />
+            </padding>
+            <StackPane.margin>
+                <Insets top="25.0" />
+            </StackPane.margin>
+        </FlowPane>
+      <padding>
+         <Insets bottom="20.0" left="20.0" top="30.0" />
+      </padding>
+    </StackPane>
+</ScrollPane>

@@ -1,0 +1,225 @@
+\documentclass[12pt, xcolor=table]{beamer}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\setsansfont{Roboto}
+\setmonofont{Roboto Mono}
+
+\definecolor{myfontcolor}{RGB}{13, 71, 161}
+\definecolor{stringcolor}{RGB}{0,150,20}
+\definecolor{keywordcolor}{RGB}{0,90,230}
+\definecolor{commentcolor}{RGB}{192,32,32}
+
+\title{Review\\Lastenheft}
+\author{tj18b}
+
+\beamertemplatenavigationsymbolsempty 
+\setbeamercolor{section in toc}{fg=myfontcolor} 
+\setbeamercolor{subsection in toc}{fg=myfontcolor}
+\setbeamercolor{section}{fg=myfontcolor}
+\setbeamercolor{subsection}{fg=myfontcolor}
+\setbeamercolor{frametitle}{fg=myfontcolor}
+\setbeamercolor{framesubtitle}{fg=myfontcolor}
+\setbeamercolor{title}{fg=myfontcolor}
+\setbeamertemplate{section in toc shaded}[default][100]
+\setbeamertemplate{footline}[text line]{
+	\parbox{\linewidth}{
+		\footnotesize
+		\insertsection\hfill\insertframenumber/\inserttotalframenumber
+	}
+}
+
+\renewcommand{\baselinestretch}{1.4}
+
+\begin{document}
+
+\newcommand{\subitem}[1]{
+    {\setlength\itemindent{12pt} \item[-]#1}
+}
+
+\maketitle
+	
+\frame{\frametitle{Inhalt}\tableofcontents[sections={1-5}]}
+\frame{\tableofcontents[sections={6-10}]}
+
+\section{Visionen und Ziele}
+\begin{frame}
+	\frametitle{Visionen und Ziele}
+	\begin{itemize}
+	\item Software für NAO-Team HTWK
+		\subitem{Auswertung von Videos}
+		\subitem{Konfiguration/Bearbeitung der Auswertung}
+		\subitem{n Videos und Logs mit festem Dateiformat}
+		\subitem{ Synchronisation von n Videos}
+	\end{itemize}
+\end{frame}
+
+\section{Rahmenbedingungen und Produkteinsatz}
+\begin{frame}
+	\frametitle{Anwendungsbereich \& Zielgruppe}
+	\begin{itemize}
+		\item Synchronisation und Auswertung, also nach einem Turnier
+		\item Zielgruppe ist ein Roboterfußballteam
+		\subitem{u.A. Studenten, universitäre Mitarbeiter}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Betriebsbedingungen}
+	\begin{itemize}
+		\item unregelmäßige Nutzungszeiträume
+		\item Software ist eine Desktopanwendung
+	\end{itemize}
+	\vspace{0.5cm}\textbf{Produktumgebung}\vspace{0.2cm}
+	\begin{center}
+	\small
+	\begin{tabularx}{\framewidth}{lll}
+		\textbf{Software}&\textbf{Hardware}&\textbf{Orgware}\\
+		Windows/Linux/Java&Aktueller Laptop&Zugriff auf Videodaten\\
+	\end{tabularx}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Betriebsbedingungen}
+	\textbf{Entwicklungsumgebung}\vspace{0.2cm}
+	\begin{center}
+	\small
+	\begin{tabularx}{\framewidth}{lll}
+		\textbf{Software}&\textbf{Hardware}&\textbf{Orgware}\\
+		Windows/Linux/Mac&PC&Zugriff auf Videodaten\\
+		Java \& IDE&&GIT \& Logs\\
+	\end{tabularx}
+	\end{center}
+\end{frame}
+
+\section{Kontext und Überblick}
+\begin{frame}
+	\frametitle{Kontext und Überblick}
+	\begin{itemize}
+		\item Standalone-Software
+		\item Mobil einsetzbar
+		\item Windows und Linux
+	\end{itemize}
+\end{frame}
+
+\section{Funktionale Anforderungen}
+\begin{frame}
+	\frametitle{Funktionale Anforderungen}
+	\begin{itemize}
+		\item paralleles Abspielen von bis zu 4 Videos (+ Bedienelemente)
+		\item Synchronisation mit (geparsten) Logfiles
+		\item Auswahl der verwendeten Audiospur
+		\item Speichern der Bearbeitung in eigenständigem Format(MTL)
+		\item Zusatzfeatures wie Schnitt, Audiosynchro und automatischer Kamerawechsel
+	\end{itemize}
+\end{frame}
+
+\section{Nicht-funktionale Anforderungen}
+\begin{frame}
+	\frametitle{Nicht-funktionale Anforderungen}
+	\begin{itemize}
+		\item Wartbarkeit 
+		\subitem{Javadoc vollständig}
+		\subitem{Dokumentation/Kommentare englisch}
+		\subitem{Code conventions}
+		\item Interoperabilität
+		\subitem {Windows}
+		\subitem {Linux}
+		\subitem {(MacOS)}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item Bedienbarkeit
+		\subitem{Manual}
+		\subitem{nutzerfreundliche GUI}
+		\subitem{Anname: DAU}
+	\end{itemize}
+\end{frame}
+
+\section{Produktdaten}
+\begin{frame}
+	\frametitle{Produktdaten}
+	\begin{itemize}
+		\item Inputdaten
+		\subitem{n Videodaten}
+		\subitem{GC Log}
+		\item Videodaten
+		\subitem{Datei im MP4 Format}
+		\subitem{30 FPS}
+		\subitem{Offset}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item GC Log
+		\subitem{Log-Datei als Textdokument}
+		\subitem{Daten zum Spielablauf}
+		\item Konfigurationsdaten
+		\subitem{automatisierte Prozesse}
+		\subitem{Videoformat}
+		\item Outputdaten
+		\subitem{Video im angegeben Format}
+		\subitem{MLT Datei}
+	\end{itemize}
+\end{frame}
+
+\section{Qualitätsmatrix nach ISO 25010}
+\begin{frame}
+	\frametitle{Qualitätsmatrix nach ISO 25010}
+	\begin{center}
+	\small
+	\begin{tabularx}{\framewidth}{X|cccc}
+		Wichtigkeit&Hoch&Mittel&Niedrig&N.A.\\
+		\hline Funktionale Tauglichkeit&X&&& \\
+		Effizienz&X&&& \\
+		Kompatibilität&&X&& \\
+		Nutzbarkeit&&X&& \\
+		Zuverlässigkeit&&X&& \\
+		Sicherheit&&&&X \\
+		Wartbarkeit&X&&& \\
+		Übertragbarkeit&X&&& \\
+	\end{tabularx}
+	\end{center}
+\end{frame}
+
+\section{Lieferumfang}
+\begin{frame}
+	\frametitle{Lieferumfang}
+	\begin{itemize}
+		\item GUI basiertes Modul 
+		\subitem{Video- \& Log-Files einlesen, anzeigen, bearbeiten, darstellen}
+		\subitem{Synchronisation Video mit Log}
+		\item Dokumentation
+	\end{itemize}
+\end{frame}
+
+\section{Abnahmekriterien}
+\begin{frame}
+	\frametitle{Abnahmekriterien}
+	\begin{itemize}
+		\item Einhalten des Lieferumfangs
+		\item optionale Anforderungen
+        \end{itemize}
+\end{frame}
+
+\section{Vorprojekt}
+\begin{frame}
+	\frametitle{Vorprojekt}
+		\begin{itemize}
+		\item Grundger{\"u}st f{\"u}r das weitere Vorgehen
+		\item Gui-Entwurf
+		\item Synchrone Wiedergabe
+		\item Log-Files parsen
+        \end{itemize}
+\end{frame}
+
+\end{document}

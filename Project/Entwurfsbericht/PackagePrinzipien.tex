@@ -1,0 +1,30 @@
+\chapter{Struktur- und Entwurfsprinzipien einzelner Pakete}
+
+\section{Package: Source Packages}
+Dieses Package beinhaltet die entwickelten Java Module, welche sich aus java Dateien zusammensetzen. Dabei ist weitestgehend jedes Package als Modul implementiert.
+
+\begin{tabularx}{\textwidth}{lX}
+\textbf{robokicker.config}&Parameter/Konfigurierbare Werte\\
+\textbf{robokicker.pubsub}&EventBus Implementierung des Publish-Subscribe Pattern\\
+\textbf{robokicker.log}&Log file parse, LogPane als GUI-Controller zur zugehörigen FXML, Log Entry als Datenstruktur\\
+\textbf{robokicker.menu}&Menu, SettingsMenu als GUI-Controller\\
+\textbf{robokicker.track}&TrackRange als Datenstruktur, TrackPane als GUI-Controller und die TrackBox als Spurelement\\
+\textbf{robokicker.scene}&Robokicker als main class, sowie Szene als GUI-Controller\\
+\textbf{robokicker.videoplayer}&VideoPlayer, VideoPane als GUI-Controller\\
+\textbf{robokicker.util}&Unterschiedliche Funktionalitäten\\
+\textbf{robokicker.mltparser}&MLTReader für das Lesen von MLT Dateien, MLTTWriter für das schreiben MLT Dateien sowie unterschiedliche Datenstrukturen\\
+\end{tabularx}
+
+\section{Package: Test Packages}
+Gleicher Aufbau wie source packages. Beinhaltet JUnit Tests zu jeder testrelevanten Klasse.
+
+\section{Package: Resources}
+In diesem Package liegen folgende hierarchisch untergeordneten Packages:
+
+\begin{description}
+	\item [fxml] Hier liegen alle FXML-Dateien, die die hierarchische Struktur und das Layout des GUI beschreiben. Dabei besitzt jede größere Komponente eine eigene fxml-Datei. Das macht den Code übersichtlicher und bringt dadurch Vorteile in der Wartbarkeit und Wiederverwendbarkeit.
+	\item [help] In diesem Package liegen fast ausschließlich HTML-Dateien, die das Skript für das Help Menu bilden.
+	\item [icons] In diesem Package liegen Icons.
+	\item [styles] In diesem Package liegt die CSS Datei für das GUI.
+	\item [test] In diesem Package liegen Videodateien und Textdateien zum Testen während des Entwickelns.
+\end{description}

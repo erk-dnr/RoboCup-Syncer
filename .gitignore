@@ -1,0 +1,53 @@
+#
+# Default excludes
+#
+
+# Binaries
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+/Project/*.zip
+/Dokumente/*.zip
+/Project/Sync God/settings/*.xml
+*.war
+*.ear
+*.sar
+*.class
+
+# Maven 
+**/target/
+
+# IntelliJ project files 
+*.iml
+*.iws
+*.ipr
+*.idea/
+
+# eclipse project file
+**.settings/
+**.classpath
+**.project
+
+# NetBeans specific
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+**/build/
+**/nbbuild/
+**/dist/
+**/nbdist/
+**.nb-gradle/
+
+
+# OS
+**.DS_Store
+
+# Misc
+**.swp
+**release.properties
+**pom.xml.releaseBackup
+**pom.xml.tag

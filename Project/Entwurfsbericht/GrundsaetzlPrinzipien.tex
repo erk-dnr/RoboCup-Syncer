@@ -1,0 +1,17 @@
+\chapter{Grundsätzliche Struktur- und Entwurfsprinzipien}
+
+\section{Programmiersprachen/Markup}
+Die ausschließlich verwendete Programmiersprache ist Java. FXML wird als markup language für das UI verwendet.
+
+\section{Architektur/Struktur}
+Die Software kommt ohne eine Server-Anwendung aus und ist eigenständig als Stand-Alone Application funktional.
+Als Build-Tool wird Maven verwendet.
+
+\section{Frameworks/Libraries}
+Die grafische Benutzeroberfläche wird mit JavaFX und dem internen Tool SceneBuilder modelliert.
+Da aber JavaFX im Bereich Audio- und Videomanipulation einigen unserer Anforderungen nicht gerecht wird, binden wir das Java Library openpnp (Java Bindung für OpenCV).
+
+\section{Vorgehensweise}
+Zuerst wurde ein Grundgerüst erstellt, welches bereits alle bisher für notwenig erachteten Klassen enthält und in dem der Großteil der geplanten Methoden deklariert ist (siehe Abschnitt \glqq Datenmodell\grqq).
+Die einzelnen Funktionalitäten werden nacheinander - wie im Releaseplan beschrieben - entwickelt und zusammengeführt.
+Leichte Abweichungen aufgrund von schwer vorhersehbaren Problemen waren eingeplant und sind bereits eingetreten. Darüber hinaus konnte bereits ein Vorsprung im Entwicklungsfortschritt gegenüber der Planung erwirkt werden. Dieser soll möglichst beibehalten werden, um ein Zeitfenster zur Lösung eventuell größerer Probleme zu gewährleisten.

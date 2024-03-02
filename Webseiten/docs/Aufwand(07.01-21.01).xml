@@ -1,0 +1,16 @@
+<Analyse von="2019-01-07" bis="2019-01-21" gruppe="tj18b" createdBy="DH" createdAt="2019-01-19"> 
+  <done who="RW, DH, SP" A="1" S="1" Zeit="2">Formulierung Items, Planung weiteres vorgehen, Systemarchitektur besprechen</done>
+  <done who="RW,SP,DH,ED,JW,TD,AE" A="1" S="1" Zeit="2"> Issues assignen, Besprechung Projekt/Systemarchitektur</done>
+  <done who="DH" A="1" S="1" Zeit="3">JavaFX Player getestet, Projektstruktur verbessert (gitignore, cleanup, refactored)</done>
+  <done who="DH,SP" A="2" S="2" Zeit="8"> Cleanup repo, vlcj videoplayer + functions, opencv player erstellt und verworfen</done>
+  <done who="DH" A="1" S="1" Zeit="3">Erstellung Diagramm und UML zu Projekt/System</done>
+  <done who="RW" A="3" S="3" Zeit="5">Bugs aus Trackpane entfernt. Anlage für Feinjustierung der Ränder implementiert. Code verbessert</done>
+  <done who="RW" A="1" S="1" Zeit="1">Aktualisierung Website, Enturfsbericht. Gerüst für Testbericht</done>
+  <done who="TD" A="2" S="2" Zeit="4">Implementierung einiger funktionalitäten der Menüleiste</done>
+  <done who="JW" A="4" S="3" Zeit="8">Anfertigung Präsentation zu Review 2</done>
+  <done who="ED" A="3" S="3" Zeit="6">SettingsMenu, Manual</done>
+  <done who="ED,TD" A="3" S="2" Zeit="4">Bugfixes SettingsMenu, Manual</done>
+  <done who="DH" A="1" S="2" Zeit="3">Analysieren des Projekts, fixing code smells und bugs</done>
+  <done who="SP" A="1" S="1" Zeit="2">Observer Pattern, mute, fixing bugs</done>
+  <done who="RW,SP,DH,ED,JW,TD,AE" A="1" S="1" Zeit="1">Codereview</done>
+</Analyse>

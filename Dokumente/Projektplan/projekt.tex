@@ -1,0 +1,51 @@
+\chapter{Projektplan}
+\section{Einführung}
+Das Projekt wurde in folgende Arbeitspakete unterteilt: Vorprojekt, Synchronisation, Basisfunktionalität, Dokumentation und Ein-/Ausgabe.\\
+Die Einteilung erfolgte mit der Absicht, die Aufgabenverteilung im weiteren Verlauf des Projekts zu vereinfachen und einen groben Ansatz zur geforderten Modularität zu schaffen.
+
+\section{Vorprojekt}
+Dieses Paket enthält alle Funktionen, die das Vorprojekt ausmachen.
+\subsection{Ziele}
+Erstellen eines grundlegenden Klassengerüsts des gesamten Projekts und einer (nicht-funktionalen) GUI. 
+Benutzeroberfläche übersichtlich, intuitiv gestalten.\\
+Zentralen Bereich zum Abspielen mehrerer Videos, Kontextmenüleiste, teilweise konfigurierbare Bedienelemente, Editierspur, in der Abschnitte markiert werden können und eingelesene GC-Logs zur Nutzerinteraktion bereitstellen.\\
+
+Geschätzter Aufwand: 10\%
+
+\section{Synchronisation}
+Dieses Paket enthält Funktionen zur Synchronisation von Videos.
+
+\subsection{Ziele}
+Frame-genaues springen, Videos per Offset synchron abspielen und eingelesene GC-Logs parsen.
+
+\textbf{Kann-Ziele}\\
+Automatische Kameraauswahl und parsen von Roboter-Logs.\\
+
+Geschätzter Aufwand: 20\% (+15\% Kann-Ziele)
+
+\section{Basisfunktionalität}
+Dieses Paket enthält grundlegende Funktionen, auf die andere Paketen aufbauen.
+\subsection{Ziele}
+Mehrere Videos abspielen, Audiospur eines Videos auswählen, Editiermarkierungen setzen, anhand geparster Logs synchron, mit einstellbarem Zeitabstand vor ein Log-Ereignis springen.
+
+\textbf{Kann-Ziele}\\
+Videos zu FPS konvertieren, Overlaygrafik generieren, letzte Aktion rückgängig machen.
+
+Geschätzter Aufwand: 40\% (+15\% Kann-Ziele)
+
+\section{Ein-/Ausgabe}
+Dieses Paket enthält Funktionen zum Einlesen/Ausgeben von Dateien.
+\subsection{Ziele}
+GC-Logs einlesen, Zwischenstand in eigenem Dateiformat speichern und wieder einlesen, Exportieren von Editiermarkierungen in MLT-Datei.
+
+\textbf{Kann-Ziele}\\
+Roboter-Logs einlesen, mehrere Videoformate einlesen, Video ohne Audio/nur Audiospur behandeln.
+
+Geschätzter Aufwand: 25\% (+15\% Kann-Ziele)
+
+\section{Dokumentation}
+Dieses Paket enthält alle Anforderungen an die Dokumentation
+\subsection{Ziele}
+Parallel zum Projekt Code kommentieren, JavaDoc führen, Handbuch schreiben.
+
+Geschätzter Aufwand: 5\%

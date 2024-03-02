@@ -1,0 +1,17 @@
+\chapter{Testberichte}
+
+\section{Unit-Tests}
+Tests der einzelnen Komponenten ohne Berücksichtigung von deren Zusammenspiel.
+\begin{tabularx}{\textwidth}{lX}
+\textbf{Trackpane}&kein Unittest implementiert.\\
+\textbf{Trackbox}&Test einzelner Funktionen wie einfügen, editieren, splitten und finden von Markern. Fehlerfall bei Exeption und abweichenden Werten vom Soll. Kompiliert ohne Fehler\\
+\textbf{LogPane}&kein Unittest implementiert.\\
+\textbf{LogParser}&Test fürs parsen, liest einen Testlog mit zwei Entries und überprüft ob es diese korrekt in einer Liste stehen\\
+\textbf{MltParser}&Testd für das Parsen der mlt-Dateien, testet Funktionen des Lesens und Schreibens \\
+\textbf{VideoPane}&kein Unittest implementiert.\\
+\textbf{VideoPlayer}&kein Unittest implementiert.\\
+\textbf{EventBus}&Testet un-/subscribing, registrieren eines Topics, posten einer Nachricht\\
+\textbf{Menu}&Testet Initialisierung von Menü Elementen\\
+\textbf{HelpMenu}&Testet Initialisierung der visuellen Elemente\\
+\textbf{SettingsMenu}&Testet Eingaben bei TextFields. Testet Funktionalität von Tasten wie Apply und Reset.\\
+\end{tabularx}
